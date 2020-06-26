@@ -1,0 +1,50 @@
+<p>salad-detail works!</p>
+<p>pizza-detail works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <img
+      [src]="salad.imagePath"
+      alt="{{ salad.name }}"
+      class="img-responsive"
+      style="max-height: 300px;">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ salad.name }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div
+      class="btn-group"
+      appDropdown>
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle">
+        Manage Recipe <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <!-- <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">To Shopping List</a></li>
+        <li><a style="cursor: pointer;" (click)="onEditRecipe()">Edit Recipe</a></li>
+        <li><a style="cursor: pointer;">Delete Recipe</a></li> -->
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    {{ salad.description }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let topping of salad.toppings">
+        {{ topping.name }} - {{ topping.name }}
+      </li>
+    </ul>
+  </div>
+</div>

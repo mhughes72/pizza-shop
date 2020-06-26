@@ -1,0 +1,56 @@
+<div class="example-container">
+  <form [formGroup]="pizzaForm" (ngSubmit)="onSubmitPizza()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Sub Name</mat-label>
+      <input matInput formControlName="subName">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Image Path</mat-label>
+      <input matInput formControlName="imagePath">
+    </mat-form-field>
+    <br>
+
+
+    <div class="" formArrayName="toppings">
+      <div *ngFor="let toppingCtrl of pizzaForm.get('toppings')['controls']; let i = index"
+      [formGroupName]="i">
+
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input formControlName="name" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+          <input formControlName="description" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Image Path</mat-label>
+          <input formControlName="imagePath" matInput>
+        </mat-form-field>
+
+      </div>
+      <div class="row">
+        <button mat-button (click)="onAddTopping()">Add Topping</button>
+      </div>
+    </div>
+    <br>
+
+    <button type="submit" mat-button [disabled]="!pizzaForm.valid">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+
+
+input.ng-invalid.ng-untouched,
+textarea.ng-invalid {
+  border: 1px solid red;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+<mat-nav-list>
+
+  <a *ngIf="!isAuth" mat-list-item matrouterLink="/signup" (click)="onClose()">
+    <mat-icon>build</mat-icon>
+    <span class="nav-caption">Signup</span>
+  </a>
+  <a *ngIf="!isAuth" mat-list-item matrouterLink="/login" (click)="onClose()">
+    <mat-icon>calendar_today</mat-icon>
+    <span class="nav-caption">Login</span>
+  </a>
+  <a *ngIf="isAuth" mat-list-item matrouterLink="/specials" (click)="onClose()">
+    <mat-icon>commute</mat-icon>
+    <span class="nav-caption">Specials</span>
+  </a>
+  <mat-list-item>
+    <button mat-raised-button>Fuck off</button>
+  </mat-list-item>
+</mat-nav-list>
