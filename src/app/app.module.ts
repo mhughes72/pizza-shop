@@ -34,6 +34,12 @@ import { PizzaNutritionComponent } from './menu/pizza-list/pizza-nutrition/pizza
 import { BannerComponent } from './banner/banner.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PizzaFormComponent } from './pizza-form/pizza-form.component';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { environment } from '../environments/environment';
+import { SaladFormComponent } from './salad-form/salad-form.component'
 
 
 @NgModule({
@@ -59,7 +65,7 @@ import { PizzaFormComponent } from './pizza-form/pizza-form.component';
     PizzaNutritionComponent,
     BannerComponent,
     PizzaFormComponent,
-
+    SaladFormComponent,
 
 
   ],
@@ -71,7 +77,10 @@ import { PizzaFormComponent } from './pizza-form/pizza-form.component';
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule
 
   ],
   providers: [PizzaShopService, SaladShopService, AuthService, SpecialsService],

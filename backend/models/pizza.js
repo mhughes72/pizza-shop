@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const postSchema = mongoose.Schema({
+const pizzaSchema = mongoose.Schema({
   name: { type: String, required: true },
   subName: { type: String, required: true },
   description: { type: String, required: true },
@@ -12,17 +12,11 @@ const postSchema = mongoose.Schema({
     imagePath: { type: String, required: true },
   }]
 
-  // toppings: { type: Array }
+
 });
 
-module.exports = mongoose.model('Pizza', postSchema);
 
-
-
-
-
-
-
+module.exports = mongoose.model('Pizza', pizzaSchema);
 
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Salad } from 'src/app/salad.models';
+import { Salad } from 'src/app/menu/salad-list/salad.models';
 import { SaladShopService } from 'src/app/salad-shop.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 

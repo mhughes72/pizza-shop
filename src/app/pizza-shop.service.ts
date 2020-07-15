@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 
-import { Pizza } from './pizza.models';
+import { Pizza } from './menu/pizza-list/pizza.models';
 import { Topping } from './topping.models';
 import { HttpClient } from "@angular/common/http";
 import { map } from 'rxjs/operators';
@@ -99,7 +99,7 @@ export class PizzaShopService {
     this.pizzas.push(pizza)
     this.pizzasUpdated.next(this.pizzas.slice())
 
-
+    console.log('Pizza: ', pizza)
     let a = this.http
       .post<{ message: string }>("http://localhost:3000/api/pizza", pizza)
       .subscribe(responseData => {
@@ -117,7 +117,7 @@ export class PizzaShopService {
       .pipe(map((postData) => {
         console.log('postData: ', postData);
 
-        return postData.posts.map(post => {
+        return postData.pizza.map(post => {
           return {
             id: post._id,
             name: post.name,

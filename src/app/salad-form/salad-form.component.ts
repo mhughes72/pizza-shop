@@ -1,28 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { Pizza } from '../menu/pizza-list/pizza.models';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
-import { PizzaShopService } from '../pizza-shop.service';
+import { SaladShopService } from '../salad-shop.service';
 
 @Component({
-  selector: 'app-pizza-form',
-  templateUrl: './pizza-form.component.html',
-  styleUrls: ['./pizza-form.component.css']
+  selector: 'app-salad-form',
+  templateUrl: './salad-form.component.html',
+  styleUrls: ['./salad-form.component.css']
 })
-export class PizzaFormComponent implements OnInit {
 
-  pizzaForm: FormGroup;
-  constructor(private pizzaShopService: PizzaShopService) { }
+export class SaladFormComponent implements OnInit {
+
+  saladForm: FormGroup;
+  constructor(private saladShopService: SaladShopService) { }
 
   ngOnInit(): void {
     this.initForm();
   }
 
   private initForm() {
-    let pizzaName = '';
+    let saladName = '';
     let toppings = new FormArray([]);
 
 
-    this.pizzaForm = new FormGroup({
+    this.saladForm = new FormGroup({
       'name': new FormControl('Matt', Validators.required),
       'subName': new FormControl(),
       'description': new FormControl(),
@@ -34,7 +35,7 @@ export class PizzaFormComponent implements OnInit {
 
 
 onAddTopping() {
-  (<FormArray>this.pizzaForm.get('toppings')).push(
+  (<FormArray>this.saladForm.get('toppings')).push(
     new FormGroup({
       'name': new FormControl(),
       'description': new FormControl(),
@@ -45,13 +46,9 @@ onAddTopping() {
 }
 
 
-  onSubmitPizza() {
+  onSubmitSalad() {
 
-    this.pizzaShopService.addPizza(this.pizzaForm.value)
+    this.saladShopService.addSalad(this.saladForm.value)
 
   }
-
 }
-
-
-

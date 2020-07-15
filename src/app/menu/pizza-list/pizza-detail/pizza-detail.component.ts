@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PizzaShopService } from 'src/app/pizza-shop.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Pizza } from 'src/app/pizza.models';
+import { Pizza } from 'src/app/menu/pizza-list/pizza.models';
 
 @Component({
   selector: 'app-pizza-detail',

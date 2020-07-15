@@ -1,49 +1,50 @@
 import { EventEmitter, Injectable } from '@angular/core';
 
-import { Salad } from './salad.models';
+import { Salad } from './menu/salad-list/salad.models';
 import { Topping } from './topping.models';
+import { HttpClient } from "@angular/common/http";
+import { map } from 'rxjs/operators';
+import { Subject } from "rxjs";
+
 
 @Injectable()
 export class SaladShopService {
   saladSelected = new EventEmitter<Salad>();
+  private saladsUpdated = new Subject<Salad[]>();
 
   private salads: Salad[] = [
-    // new Salad(
-    //   'PINEAPPLE, BEET & GOAT CHEESE SALAD',
-    //   'Satay Chicken Strips, Lettuce, Carrots, Rice Noodles, Cucumbers, Bean Sprouts, Cilantro, Peanuts and Sesame Seeds Tossed with Thai Vinaigrette.',
-    //   'https://www.thecheesecakefactory.com/assets/images/Menu-Import/CCF_Social_ThaiChickenSalad.jpg',
-    //   [
-    //     new Topping('Meat', 'something', 'http://www.youtube.com'),
-    //     new Topping('Green Pepper', 'something', 'http://www.youtube.com'),
 
-
-    //   ]),
-    //   new Salad(
-    //     'SHEILA CHICKEN AND AVOCADO SALAD',
-    //     'Grilled Chicken, Fresh Avocado, Mixed Greens, Crisp Tortilla Strips, Carrots, Cilantro and Cashews Tossed in a Citrus-Honey-Peanut Vinaigrette.',
-    //     'https://www.thecheesecakefactory.com/assets/images/Menu-Import/CCF_Social_SheilasChickenandAvocadoSalad.jpg',
-    //     [
-    //       new Topping('Meat', 'something', 'http://www.youtube.com'),
-    //       new Topping('Green Pepper', 'something', 'http://www.youtube.com'),
-
-    //     ]),
-    //     new Salad(
-    //       'BARBEQUE RANCH CHICKEN SALAD',
-    //       'Avocado, Tomato, Grilled Corn, Black Beans, Cucumber and Romaine All Tossed with Our Barbeque Ranch Dressing. Topped with Lots of Crispy Fried Onion Strings for Crunch.',
-    //       'https://www.thecheesecakefactory.com/assets/images/Menu-Import/CCF_BarbequeRanchChickenSalad.jpg',
-    //       [
-    //         new Topping('Meat', 'something', 'http://www.youtube.com'),
-    //         new Topping('Green Pepper', 'something', 'http://www.youtube.com'),
-
-    //       ]),
 
   ];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
 
   getSalads() {
-    return this.salads.slice();
+    console.log('GET SALADS')
+    this.http
+      .get<any>("http://localhost:3000/api/salad")
+      .pipe(map((postData) => {
+        console.log('postData: ', postData);
+
+        return postData.salad.map(post => {
+          return {
+            id: post._id,
+            name: post.name,
+            subName: post.subName,
+            description: post.description,
+            imagePath: post.imagePath,
+            toppings: post.toppings,
+          }
+        })
+      }))
+      .subscribe(transformedPosts => {
+        this.salads = transformedPosts;
+        console.log('transformedPosts: ', transformedPosts);
+
+        this.saladsUpdated.next([...this.salads]);
+
+      });
   }
 
   getSalad(index: number) {
@@ -52,5 +53,22 @@ export class SaladShopService {
 
   addIngredientsToShoppingList(ingredients: Topping[]) {
     // this.slService.addIngredients(ingredients);
+  }
+
+  addSalad(salad: Salad) {
+    console.log(salad);
+    this.salads.push(salad)
+    this.saladsUpdated.next(this.salads.slice())
+
+    let a = this.http
+      .post<{ message: string }>("http://localhost:3000/api/salad", salad)
+      .subscribe(responseData => {
+
+      })
+
+  }
+
+  getPostUpdateListener() {
+    return this.saladsUpdated.asObservable();
   }
 }

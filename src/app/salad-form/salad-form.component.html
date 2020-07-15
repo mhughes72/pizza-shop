@@ -1,5 +1,5 @@
 <div class="example-container">
-  <form [formGroup]="pizzaForm" (ngSubmit)="onSubmitPizza()">
+  <form [formGroup]="saladForm" (ngSubmit)="onSubmitSalad()">
     <mat-form-field appearance="fill">
       <mat-label>Name</mat-label>
       <input matInput formControlName="name">
@@ -26,7 +26,7 @@
 
 
     <div class="" formArrayName="toppings">
-      <div *ngFor="let toppingCtrl of pizzaForm.get('toppings')['controls']; let i = index"
+      <div *ngFor="let toppingCtrl of saladForm.get('toppings')['controls']; let i = index"
       [formGroupName]="i">
 
         <mat-form-field appearance="fill">
@@ -51,12 +51,6 @@
     </div>
     <br>
 
-    <button type="submit" mat-button [disabled]="!pizzaForm.valid">Submit</button>
+    <button type="submit" mat-button [disabled]="!saladForm.valid">Submit</button>
   </form>
-</div>
-<div>
-
-
-<app-salad-form></app-salad-form>
-
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PizzaShopService } from '../pizza-shop.service';
+import { SaladListComponent } from '../menu/salad-list/salad-list.component';
 
 @Component({
   selector: 'app-banner',
@@ -8,7 +9,7 @@ import { PizzaShopService } from '../pizza-shop.service';
 })
 export class BannerComponent implements OnInit {
   onClick() {
-    // this.pizzaShopService.addPizza()
+    // this.dialog.open(SaladListComponent);
   }
   onClick2() {
     this.pizzaShopService.getPizzas()

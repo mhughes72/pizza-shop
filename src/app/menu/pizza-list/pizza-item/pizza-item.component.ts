@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Pizza } from 'src/app/pizza.models';
+import { Pizza } from 'src/app/menu/pizza-list/pizza.models';
 import { MatDialog } from '@angular/material/dialog';
 import { PizzaDetailComponent } from '../pizza-detail/pizza-detail.component';
 import { PizzaNutritionComponent } from '../pizza-nutrition/pizza-nutrition.component';

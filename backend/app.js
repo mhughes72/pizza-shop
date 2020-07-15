@@ -2,8 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
-const Post = require("./models/post");
-
+const Pizza = require("./models/pizza");
+const Salad = require("./models/salad");
 const app = express();
 
 mongoose
@@ -34,7 +34,7 @@ app.use((req, res, next) => {
 });
 
 app.post("/api/pizza", (req, res, next) => {
-  const post = new Post({
+  const pizza = new Pizza({
 
     name: req.body.name,
     subName: req.body.subName,
@@ -43,29 +43,59 @@ app.post("/api/pizza", (req, res, next) => {
     toppings: req.body.toppings
 
   });
-  console.log('POST: ', post)
-  post.save().then(createdPost => {
+
+  pizza.save().then(createdPizza => {
     res.status(201).json({
-      message: post,
-      postId: createdPost._id
+      message: pizza,
+      postId: createdPizza._id
     });
   });
 });
 
 app.get("/api/pizza", (req, res, next) => {
-  Post.find().then(documents => {
+  Pizza.find().then(documents => {
     res.status(200).json({
-      message: documents,
-      posts: documents
+      pizza: documents
     });
   });
 });
 
 app.delete("/api/posts/:id", (req, res, next) => {
-  Post.deleteOne({ _id: req.params.id }).then(result => {
+  Pizza.deleteOne({ _id: req.params.id }).then(result => {
     console.log(result);
     res.status(200).json({ message: "Post deleted!" });
   });
 });
+
+
+app.post("/api/salad", (req, res, next) => {
+  console.log('REQ: ', req);
+  // console.log('REs: ', res);
+  const salad = new Salad({
+
+    name: req.body.name,
+    subName: req.body.subName,
+    description: req.body.description,
+    imagePath: req.body.imagePath,
+    toppings: req.body.toppings
+
+  });
+
+  salad.save().then(createdSalad => {
+    res.status(201).json({
+      message: salad,
+      postId: createdSalad._id
+    });
+  });
+});
+
+app.get("/api/salad", (req, res, next) => {
+  Salad.find().then(documents => {
+    res.status(200).json({
+      salad: documents
+    });
+  });
+});
+
 
 module.exports = app;

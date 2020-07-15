@@ -1,4 +1,4 @@
-import { Topping } from './topping.models';
+import { Topping } from '../../topping.models';
 
 export class Salad {
   public name: string;

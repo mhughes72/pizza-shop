@@ -16,6 +16,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCheckboxModule} from '@angular/material/checkbox'
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatDialogModule,
     MatTableModule,
     MatGridListModule,
-    
+    MatCheckboxModule
+
 
 
 
@@ -58,7 +60,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatProgressSpinnerModule,
     MatDialogModule,
     MatTableModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCheckboxModule
 
   ]
 })

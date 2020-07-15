@@ -10,6 +10,7 @@ import { SaladDetailComponent } from './menu/salad-list/salad-detail/salad-detai
 import { LoginComponent } from './auth/login/login.component';
 import { AuthGuard } from './auth/auth.guard';
 import { PizzaFormComponent } from './pizza-form/pizza-form.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 
 
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
   ]},
   { path: 'specials', component: SpecialsComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   { path: 'menu', component: MenuComponent, children: [
     // { path: '', component: MenuComponent, pathMatch: 'full' },
     { path: 'pizza', component: PizzaListComponent, children: [
