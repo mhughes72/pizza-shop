@@ -11,6 +11,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { AuthGuard } from './auth/auth.guard';
 import { PizzaFormComponent } from './pizza-form/pizza-form.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { SidesListComponent } from './menu/sides-list/sides-list.component';
 
 
 
@@ -34,6 +35,9 @@ const appRoutes: Routes = [
       { path: ':id', component: SaladDetailComponent },
     ] },
 
+    { path: 'sides', component: SidesListComponent, children: [
+      { path: ':id', component: SidesListComponent },
+    ] },
 
   ]},
   { path: 'form', component: PizzaFormComponent}
