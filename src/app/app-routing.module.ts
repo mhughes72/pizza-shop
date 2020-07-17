@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PizzShopComponent } from './pizz-shop/pizz-shop.component';
-import { SpecialsComponent } from './specials/specials.component';
 import { MenuComponent } from './menu/menu.component';
 import { PizzaListComponent } from './menu/pizza-list/pizza-list.component';
 import { PizzaDetailComponent } from './menu/pizza-list/pizza-detail/pizza-detail.component';
@@ -12,6 +11,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { PizzaFormComponent } from './pizza-form/pizza-form.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SidesListComponent } from './menu/sides-list/sides-list.component';
+import { SpecialsListComponent } from './menu/specials-list/specials-list.component';
 
 
 
@@ -22,7 +22,7 @@ const appRoutes: Routes = [
   { path: 'pizza-shop', component: PizzShopComponent, children: [
       { path: ':id', component: PizzaDetailComponent},
   ]},
-  { path: 'specials', component: SpecialsComponent, canActivate: [AuthGuard]},
+  // { path: 'specials', component: SpecialsComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'menu', component: MenuComponent, children: [
@@ -37,6 +37,9 @@ const appRoutes: Routes = [
 
     { path: 'sides', component: SidesListComponent, children: [
       { path: ':id', component: SidesListComponent },
+    ] },
+    { path: 'specials', component: SpecialsListComponent, children: [
+      { path: ':id', component: SpecialsListComponent },
     ] },
 
   ]},

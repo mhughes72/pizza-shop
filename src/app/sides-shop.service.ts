@@ -47,7 +47,7 @@ export class SidesShopService {
       });
   }
 
-  getSalad(index: number) {
+  getSide(index: number) {
     return this.sides[index];
   }
 

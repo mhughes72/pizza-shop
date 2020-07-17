@@ -1,8 +1,8 @@
-<h1>PIZZA</h1>
+<h1>Specials</h1>
 <!-- Make one indpiendent Form Component -->
 
 <div class="example-container">
-  <form [formGroup]="pizzaForm" (ngSubmit)="onSubmitPizza()">
+  <form [formGroup]="specialsForm" (ngSubmit)="onSubmitSpecials()">
     <mat-form-field appearance="fill">
       <mat-label>Name</mat-label>
       <input matInput formControlName="name">
@@ -29,7 +29,7 @@
 
 
     <div class="" formArrayName="toppings">
-      <div *ngFor="let toppingCtrl of pizzaForm.get('toppings')['controls']; let i = index"
+      <div *ngFor="let toppingCtrl of specialsForm.get('toppings')['controls']; let i = index"
       [formGroupName]="i">
 
         <mat-form-field appearance="fill">
@@ -54,19 +54,10 @@
     </div>
     <br>
 
-    <button type="submit" mat-button [disabled]="!pizzaForm.valid">Submit</button>
+    <button type="submit" mat-button [disabled]="!specialsForm.valid">Submit</button>
   </form>
 </div>
 <div>
 
-<h1>SALAD</h1>
-<app-salad-form></app-salad-form>
-
-<h1>SIDES</h1>
-<app-sides-form></app-sides-form>
 </div>
 
-<h1>SPECIALS</h1>
-<app-specials-form></app-specials-form>
-
-<br><br><br><br>

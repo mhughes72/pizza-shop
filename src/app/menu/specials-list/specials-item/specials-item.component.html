@@ -1,0 +1,16 @@
+<mat-card (click)="onClick()" routerLinkActive="active" class="pizza-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ special.name }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="special.imagePath" [alt]="special.name">
+  <mat-card-content>
+    <p>
+      {{ special.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>

@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const Pizza = require("./models/pizza");
 const Salad = require("./models/salad");
 const Sides = require("./models/sides");
+const Specials = require("./models/specials");
 
 const app = express();
 
@@ -101,7 +102,7 @@ app.get("/api/salad", (req, res, next) => {
 
 
 app.post("/api/sides", (req, res, next) => {
-  console.log('REQ: ', req);
+  console.log('REQ:3333;');
   // console.log('REs: ', res);
   const sides = new Sides({
 
@@ -128,5 +129,39 @@ app.get("/api/sides", (req, res, next) => {
     });
   });
 });
+
+
+app.post("/api/specials", (req, res, next) => {
+  // console.log('REQ: ', req);
+  // console.log('REs: ', res);
+  const specials = new Specials({
+
+    name: req.body.name,
+    subName: req.body.subName,
+    description: req.body.description,
+    imagePath: req.body.imagePath,
+    toppings: req.body.toppings
+
+  });
+  console.log('WIN 1')
+  specials.save().then(createdSpecials => {
+    console.log('WIN 2')
+    res.status(201).json({
+      message: specials,
+      postId: createdSpecials._id
+    });
+  }).catch((e) => {
+    console.log('ERROR: ', e)
+  });
+});
+
+app.get("/api/specials", (req, res, next) => {
+  Specials.find().then(documents => {
+    res.status(200).json({
+      specials: documents
+    });
+  });
+});
+
 
 module.exports = app;
