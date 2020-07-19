@@ -27,6 +27,7 @@ export class SidesShopService {
       .pipe(map((postData) => {
         console.log('postData: ', postData);
 
+
         return postData.sides.map(post => {
           return {
             id: post._id,
@@ -34,6 +35,12 @@ export class SidesShopService {
             subName: post.subName,
             description: post.description,
             imagePath: post.imagePath,
+
+            calories: post.calories,
+            fat: post.fat,
+            transfat: post.transfat,
+            sodium: post.sodium,
+
             toppings: post.toppings,
           }
         })

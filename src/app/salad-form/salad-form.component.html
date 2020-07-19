@@ -24,6 +24,36 @@
     </mat-form-field>
     <br>
 
+    <mat-form-field appearance="fill">
+      <mat-label>calories</mat-label>
+      <input matInput formControlName="calories">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>fat</mat-label>
+      <input matInput formControlName="fat">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>transfat</mat-label>
+      <input matInput formControlName="transfat">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>sodium</mat-label>
+      <input matInput formControlName="sodium">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>price</mat-label>
+      <input matInput formControlName="price">
+    </mat-form-field>
+    <br>
+
 
     <div class="" formArrayName="toppings">
       <div *ngFor="let toppingCtrl of saladForm.get('toppings')['controls']; let i = index"

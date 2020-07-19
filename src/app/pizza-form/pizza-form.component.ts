@@ -27,6 +27,11 @@ export class PizzaFormComponent implements OnInit {
       'subName': new FormControl(),
       'description': new FormControl(),
       'imagePath': new FormControl(),
+      'calories': new FormControl(),
+      'fat': new FormControl(),
+      'transfat': new FormControl(),
+      'sodium': new FormControl(),
+      'price': new FormControl(),
       'toppings': toppings
 
     })

@@ -26,6 +26,13 @@ export class SidesFormComponent implements OnInit {
       'subName': new FormControl(),
       'description': new FormControl(),
       'imagePath': new FormControl(),
+
+      'calories': new FormControl(),
+      'fat': new FormControl(),
+      'transfat': new FormControl(),
+      'sodium': new FormControl(),
+      'price': new FormControl(),
+
       'toppings': toppings
 
     })
@@ -37,7 +44,7 @@ onAddTopping() {
     new FormGroup({
       'name': new FormControl(),
       'description': new FormControl(),
-      'imagePath': new FormControl()
+      'imagePath': new FormControl(),
     })
   )
 

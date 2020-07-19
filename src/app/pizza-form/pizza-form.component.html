@@ -28,9 +28,39 @@
     <br>
 
 
+
+    <mat-form-field appearance="fill">
+      <mat-label>calories</mat-label>
+      <input matInput formControlName="calories">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>fat</mat-label>
+      <input matInput formControlName="fat">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>transfat</mat-label>
+      <input matInput formControlName="transfat">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>sodium</mat-label>
+      <input matInput formControlName="sodium">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>price</mat-label>
+      <input matInput formControlName="price">
+    </mat-form-field>
+    <br>
+
+
+
+
     <div class="" formArrayName="toppings">
-      <div *ngFor="let toppingCtrl of pizzaForm.get('toppings')['controls']; let i = index"
-      [formGroupName]="i">
+      <div *ngFor="let toppingCtrl of pizzaForm.get('toppings')['controls']; let i = index" [formGroupName]="i">
 
         <mat-form-field appearance="fill">
           <mat-label>Name</mat-label>
@@ -47,6 +77,9 @@
           <input formControlName="imagePath" matInput>
         </mat-form-field>
 
+
+
+
       </div>
       <div class="row">
         <button mat-button (click)="onAddTopping()">Add Topping</button>
@@ -59,11 +92,11 @@
 </div>
 <div>
 
-<h1>SALAD</h1>
-<app-salad-form></app-salad-form>
+  <h1>SALAD</h1>
+  <app-salad-form></app-salad-form>
 
-<h1>SIDES</h1>
-<app-sides-form></app-sides-form>
+  <h1>SIDES</h1>
+  <app-sides-form></app-sides-form>
 </div>
 
 <h1>SPECIALS</h1>

@@ -27,6 +27,8 @@ export class SaladShopService {
       .pipe(map((postData) => {
         console.log('postData: ', postData);
 
+
+
         return postData.salad.map(post => {
           return {
             id: post._id,
@@ -34,6 +36,13 @@ export class SaladShopService {
             subName: post.subName,
             description: post.description,
             imagePath: post.imagePath,
+
+            calories: post.calories,
+            fat: post.fat,
+            transfat: post.transfat,
+            sodium: post.sodium,
+            price: post.price,
+
             toppings: post.toppings,
           }
         })

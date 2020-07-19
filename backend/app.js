@@ -43,7 +43,15 @@ app.post("/api/pizza", (req, res, next) => {
     subName: req.body.subName,
     description: req.body.description,
     imagePath: req.body.imagePath,
-    toppings: req.body.toppings
+    toppings: req.body.toppings,
+
+    calories: req.body.calories,
+    fat: req.body.fat,
+    transfat: req.body.transfat,
+    sodium: req.body.sodium,
+    price: req.body.price,
+
+
 
   });
 
@@ -80,7 +88,13 @@ app.post("/api/salad", (req, res, next) => {
     subName: req.body.subName,
     description: req.body.description,
     imagePath: req.body.imagePath,
-    toppings: req.body.toppings
+
+    calories: req.body.calories,
+    fat: req.body.fat,
+    transfat: req.body.transfat,
+    sodium: req.body.sodium,
+    price: req.body.price
+
 
   });
 
@@ -110,6 +124,13 @@ app.post("/api/sides", (req, res, next) => {
     subName: req.body.subName,
     description: req.body.description,
     imagePath: req.body.imagePath,
+
+    calories: req.body.calories,
+    fat: req.body.fat,
+    transfat: req.body.transfat,
+    sodium: req.body.sodium,
+    price: req.body.price,
+
     toppings: req.body.toppings
 
   });
@@ -140,6 +161,14 @@ app.post("/api/specials", (req, res, next) => {
     subName: req.body.subName,
     description: req.body.description,
     imagePath: req.body.imagePath,
+
+    calories: req.body.calories,
+    fat: req.body.fat,
+    transfat: req.body.transfat,
+    sodium: req.body.sodium,
+    price: req.body.price,
+
+
     toppings: req.body.toppings
 
   });

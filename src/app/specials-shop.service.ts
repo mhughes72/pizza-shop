@@ -54,6 +54,13 @@ export class SpecialsShopService {
             subName: post.subName,
             description: post.description,
             imagePath: post.imagePath,
+
+            calories: post.calories,
+            fat: post.fat,
+            transfat: post.transfat,
+            sodium: post.sodium,
+            price: post.price,
+
             toppings: post.toppings,
           }
         })
