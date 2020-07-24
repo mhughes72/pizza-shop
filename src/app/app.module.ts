@@ -44,6 +44,12 @@ import { SpecialsListComponent } from './menu/specials-list/specials-list.compon
 import { SpecialsItemComponent } from './menu/specials-list/specials-item/specials-item.component';
 import { SpecialsFormComponent } from './specials-form/specials-form.component';
 import { SpecialsShopService } from './specials-shop.service';
+import { ToppingsFormComponent } from './toppings-form/toppings-form.component';
+import { ToppingShopService } from './toppings-shop.service';
+import { ToppingsSelectComponent } from './toppings-select/toppings-select.component';
+import { SandboxComponent } from './sandbox/sandbox.component';
+// import {DialogService} from '@angular/material/dialog';
+import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -72,6 +78,11 @@ import { SpecialsShopService } from './specials-shop.service';
     SpecialsListComponent,
     SpecialsItemComponent,
     SpecialsFormComponent,
+    ToppingsFormComponent,
+    ToppingsSelectComponent,
+    SandboxComponent,
+
+
 
 
   ],
@@ -86,7 +97,8 @@ import { SpecialsShopService } from './specials-shop.service';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatDialogModule
 
   ],
   providers: [
@@ -94,7 +106,11 @@ import { SpecialsShopService } from './specials-shop.service';
     SaladShopService,
     AuthService,
     SidesShopService,
-    SpecialsShopService
+    SpecialsShopService,
+    ToppingShopService,
+    // DialogService,
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} }
   ],
 
   bootstrap: [AppComponent],

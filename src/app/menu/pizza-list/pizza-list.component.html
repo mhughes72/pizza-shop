@@ -30,20 +30,28 @@
 <div class="mat-display-3">Pizza</div>
 
 <mat-grid-list  [cols]="breakpoint"
+color="primary"
 rowHeight="2:0.5"
 (window:resize)="onResize($event)"
-(click)="onClick()"
+class="grid-list"
 >
-  <mat-grid-tile class="pizza-card"
-  *ngFor="let pizza of pizzas; let i = index"
-  (click)="onClick()"
-  [ngStyle]="{'background-image': '
 
-  url('+ '../../../assets/img/pizza/' + pizza.imagePath + ' ' +')'}">
+  <mat-grid-tile class="grid-tile"
+  [ngStyle]="{'background-color':'primary'}"
+  *ngFor="let pizza of pizzas; let i = index"
+  (click)="onOpenNutrition(pizza)"
+  >
+
     <div class="story">
+
       <figure class="story_shape">
           <img src="../../../assets/img/pizza/{{pizza.imagePath}}" [alt]="pizza.name" class="story__img" layout-fill>
-          <figcaption  class="mat-display-1 story__caption">{{pizza.name}}</figcaption>
+          <div class="bottom-left">{{pizza.name}}</div>
+          <div class="top-right">{{pizza.price}}</div>
+          <figcaption  class="mat-display-1 story__caption">
+            {{pizza.name}}<br>
+          </figcaption>
+
       </figure>
 
     </div>
@@ -54,7 +62,8 @@ rowHeight="2:0.5"
 
 <!-- linear-gradient(-225deg, rgba(0,0,0,0.6) 50%, rgba(0,36,61,0.6) 80%), -->
 
-
+<!-- [ngStyle]="{'background-image': '
+url('+ '../../../assets/img/pizza/' + pizza.imagePath + ' ' +')'}" -->
 
 
 

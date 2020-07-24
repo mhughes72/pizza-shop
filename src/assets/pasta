@@ -1,0 +1,23 @@
+HOSTNAME
+zmqb41914217973.db.41914217.fbe.hostedresource.net
+
+PORT NUM
+3307
+
+USERNAME
+zmqb41914217973
+
+PASSWORD
+e6,}Ditkml
+
+
+
+rsync --archive --chown=mhughes:mhughes ~/.ssh /home/mhughes
+
+phpmyadmin@localhost
+
+
+A FOUIBLE THAT I WON'T JUDGE YOU ON
+
+HAPPINES EQUALS REALITY - EXPECTATIONS
+

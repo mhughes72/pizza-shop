@@ -1,16 +1,40 @@
-<p>pizza-nutrition works!</p>
-<mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="true"><mat-icon>close</mat-icon></button>
-</mat-dialog-actions>
-<h2 mat-dialog-title>Install Angular</h2>
-<mat-dialog-content class="mat-typography">
-  <h3>Develop across all platforms</h3>
-  <p>Learn one way to build applications with Angular and reuse your code and abilities to build
-    apps for any deployment target. For web, mobile web, native mobile and native desktop.</p>
 
-  <h3>Speed &amp; Performance</h3>
-  <p>Achieve the maximum speed possible on the Web Platform today, and take it further, via Web
-    Workers and server-side rendering. Angular puts you in control over scalability. Meet huge
-    data requirements by building data models on RxJS, Immutable.js or another push-model.</p>
+<mat-dialog-content class="mat-typography">
+
+<div>{{ pizza.name }}</div>
+<div>
+  <img src="../../../assets/img/pizza/{{pizza.imagePath}}" [alt]="pizza.name" class="mod-image" layout-fill>
+</div>
+<div>{{ pizza.description }}</div>
+
+
+
+  <div>Calories: {{ pizza.calories }}</div>
+  <div>Fat: {{ pizza.fat }}</div>
+  <div>Trans: {{ pizza.transfat }}</div>
+  <div>Sodium: {{ pizza.sodium }}</div>
+  <div>Price: {{ pizza.price }}</div>
+
+  <mat-list>
+<mat-list-item
+[ngStyle]="{'background-color':'primary'}"
+*ngFor="let topping of pizza.toppings; let i = index"
+>
+<div>
+  <img src="../../../assets/img/toppings/{{topping.imagePath}}" [alt]="pizza.name" class="story__img" layout-fill>
+</div>
+<div>
+  {{ topping.name}}
+
+</div>
+<div>
+  Topping: {{topping.imagePath}}
+</div>
+<div>
+  {{ topping.description}}
+</div>
+</mat-list-item>
+</mat-list>
+
 </mat-dialog-content>
 

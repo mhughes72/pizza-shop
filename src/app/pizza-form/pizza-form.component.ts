@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { Pizza } from '../menu/pizza-list/pizza.models';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { PizzaShopService } from '../pizza-shop.service';
+import { Topping } from '../topping.models';
 
 @Component({
   selector: 'app-pizza-form',
@@ -12,9 +13,16 @@ export class PizzaFormComponent implements OnInit {
 
   pizzaForm: FormGroup;
   constructor(private pizzaShopService: PizzaShopService) { }
-
+  toppings: Topping
   ngOnInit(): void {
     this.initForm();
+  }
+
+
+  updateToppings($event) {
+    console.log('EVENT: ', $event)
+    this.toppings = $event;
+
   }
 
   private initForm() {
@@ -26,13 +34,13 @@ export class PizzaFormComponent implements OnInit {
       'name': new FormControl('Matt', Validators.required),
       'subName': new FormControl(),
       'description': new FormControl(),
-      'imagePath': new FormControl(),
+      'imagePath': new FormControl('founders.jpg'),
       'calories': new FormControl(),
       'fat': new FormControl(),
       'transfat': new FormControl(),
       'sodium': new FormControl(),
       'price': new FormControl(),
-      'toppings': toppings
+      // 'toppings': this.toppings
 
     })
   }
@@ -51,9 +59,15 @@ onAddTopping() {
 
 
   onSubmitPizza() {
+    console.log('this.toppings: ', this.toppings);
+    console.log('this.pizzaForm.value: ', this.pizzaForm.value);
+    this.pizzaShopService.addPizza(this.pizzaForm.value, this.toppings)
 
-    this.pizzaShopService.addPizza(this.pizzaForm.value)
 
+  }j
+
+  addTopping() {
+    console.log('ADD')
   }
 
 }

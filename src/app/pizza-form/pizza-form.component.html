@@ -1,8 +1,11 @@
 <h1>PIZZA</h1>
 <!-- Make one indpiendent Form Component -->
 
-<div class="example-container">
+
+
+
   <form [formGroup]="pizzaForm" (ngSubmit)="onSubmitPizza()">
+    <div class="form-left">
     <mat-form-field appearance="fill">
       <mat-label>Name</mat-label>
       <input matInput formControlName="name">
@@ -55,42 +58,35 @@
       <input matInput formControlName="price">
     </mat-form-field>
     <br>
-
-
-
-
-    <div class="" formArrayName="toppings">
-      <div *ngFor="let toppingCtrl of pizzaForm.get('toppings')['controls']; let i = index" [formGroupName]="i">
-
-        <mat-form-field appearance="fill">
-          <mat-label>Name</mat-label>
-          <input formControlName="name" matInput>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Description</mat-label>
-          <input formControlName="description" matInput>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Image Path</mat-label>
-          <input formControlName="imagePath" matInput>
-        </mat-form-field>
-
-
-
-
-      </div>
-      <div class="row">
-        <button mat-button (click)="onAddTopping()">Add Topping</button>
-      </div>
-    </div>
-    <br>
-
-    <button type="submit" mat-button [disabled]="!pizzaForm.valid">Submit</button>
-  </form>
 </div>
+<div class="form-right">
+  <app-toppings-select (valueChange)='updateToppings($event)'></app-toppings-select>
+</div>
+
+
+
+<button type="submit" mat-button [disabled]="!pizzaForm.valid">Submit</button>
+</form>
+
+<app-toppings-form></app-toppings-form>
+
+
+
+
+
+
+
+
+
+<!--
+
 <div>
+
+
+  <h1>TOPPINGS</h1>
+  <app-toppings-form></app-toppings-form>
+
+
 
   <h1>SALAD</h1>
   <app-salad-form></app-salad-form>
@@ -102,4 +98,4 @@
 <h1>SPECIALS</h1>
 <app-specials-form></app-specials-form>
 
-<br><br><br><br>
+<br><br><br><br> -->

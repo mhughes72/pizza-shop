@@ -21,11 +21,11 @@ export class SaladShopService {
 
 
   getSalads() {
-    console.log('GET SALADS')
+
     this.http
       .get<any>("http://localhost:3000/api/salad")
       .pipe(map((postData) => {
-        console.log('postData: ', postData);
+
 
 
 
@@ -49,7 +49,7 @@ export class SaladShopService {
       }))
       .subscribe(transformedPosts => {
         this.salads = transformedPosts;
-        console.log('transformedPosts: ', transformedPosts);
+
 
         this.saladsUpdated.next([...this.salads]);
 
@@ -65,7 +65,7 @@ export class SaladShopService {
   }
 
   addSalad(salad: Salad) {
-    console.log(salad);
+
     this.salads.push(salad)
     this.saladsUpdated.next(this.salads.slice())
 

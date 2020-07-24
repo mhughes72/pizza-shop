@@ -26,7 +26,7 @@ export class SpecialsShopService {
   public toppings: Topping[];
 
   addSpecials(specials: Specials) {
-    console.log("SUB @")
+
     this.specials.push(specials)
       this.specialsUpdated.next(this.specials.slice())
 
@@ -41,11 +41,11 @@ export class SpecialsShopService {
   }
 
   getSpecials() {
-    console.log('GET')
+
     this.http
       .get<any>("http://localhost:3000/api/specials")
       .pipe(map((postData) => {
-        console.log('postData: ', postData);
+
 
         return postData.specials.map(post => {
           return {
@@ -67,7 +67,7 @@ export class SpecialsShopService {
       }))
       .subscribe(transformedPosts => {
         this.specials = transformedPosts;
-        console.log('transformedPosts: ', transformedPosts);
+
 
         this.specialsUpdated.next([...this.specials]);
 

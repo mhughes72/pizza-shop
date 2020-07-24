@@ -6,6 +6,7 @@ const Pizza = require("./models/pizza");
 const Salad = require("./models/salad");
 const Sides = require("./models/sides");
 const Specials = require("./models/specials");
+const Toppings = require("./models/toppings");
 
 const app = express();
 
@@ -14,10 +15,10 @@ mongoose
     "mongodb+srv://mhughes:7ant147H@mattcluster-crvln.mongodb.net/meanstackpizza?retryWrites=true&w=majority"
   )
   .then(() => {
-    console.log("Connected to database!");
+
   })
   .catch(() => {
-    console.log("Connection failed!");
+
   });
 
 app.use(bodyParser.json());
@@ -73,15 +74,15 @@ app.get("/api/pizza", (req, res, next) => {
 
 app.delete("/api/posts/:id", (req, res, next) => {
   Pizza.deleteOne({ _id: req.params.id }).then(result => {
-    console.log(result);
+
     res.status(200).json({ message: "Post deleted!" });
   });
 });
 
 
 app.post("/api/salad", (req, res, next) => {
-  console.log('REQ: ', req);
-  // console.log('REs: ', res);
+
+  //
   const salad = new Salad({
 
     name: req.body.name,
@@ -116,8 +117,8 @@ app.get("/api/salad", (req, res, next) => {
 
 
 app.post("/api/sides", (req, res, next) => {
-  console.log('REQ:3333;');
-  // console.log('REs: ', res);
+
+  //
   const sides = new Sides({
 
     name: req.body.name,
@@ -153,8 +154,8 @@ app.get("/api/sides", (req, res, next) => {
 
 
 app.post("/api/specials", (req, res, next) => {
-  // console.log('REQ: ', req);
-  // console.log('REs: ', res);
+  //
+  //
   const specials = new Specials({
 
     name: req.body.name,
@@ -172,15 +173,15 @@ app.post("/api/specials", (req, res, next) => {
     toppings: req.body.toppings
 
   });
-  console.log('WIN 1')
+
   specials.save().then(createdSpecials => {
-    console.log('WIN 2')
+
     res.status(201).json({
       message: specials,
       postId: createdSpecials._id
     });
   }).catch((e) => {
-    console.log('ERROR: ', e)
+
   });
 });
 
@@ -191,6 +192,47 @@ app.get("/api/specials", (req, res, next) => {
     });
   });
 });
+
+app.post("/api/toppings", (req, res, next) => {
+
+  //
+  const toppings = new Toppings({
+
+    name: req.body.name,
+    subName: req.body.subName,
+    description: req.body.description,
+    imagePath: req.body.imagePath,
+
+    calories: req.body.calories,
+    fat: req.body.fat,
+    transfat: req.body.transfat,
+    sodium: req.body.sodium,
+    price: req.body.price,
+
+
+    toppings: req.body.toppings
+
+  });
+
+  toppings.save().then(createdToppings => {
+
+    res.status(201).json({
+      message: toppings,
+      postId: createdToppings._id
+    });
+  }).catch((e) => {
+
+  });
+});
+
+app.get("/api/toppings", (req, res, next) => {
+  Toppings.find().then(documents => {
+    res.status(200).json({
+      toppings: documents
+    });
+  });
+});
+
 
 
 module.exports = app;

@@ -21,11 +21,11 @@ export class SidesShopService {
 
 
   getSides() {
-    console.log('GET Sides')
+
     this.http
       .get<any>("http://localhost:3000/api/sides")
       .pipe(map((postData) => {
-        console.log('postData: ', postData);
+
 
 
         return postData.sides.map(post => {
@@ -40,14 +40,14 @@ export class SidesShopService {
             fat: post.fat,
             transfat: post.transfat,
             sodium: post.sodium,
-
+            price: post.price,
             toppings: post.toppings,
           }
         })
       }))
       .subscribe(transformedPosts => {
         this.sides = transformedPosts;
-        console.log('transformedPosts: ', transformedPosts);
+
 
         this.sidesUpdated.next([...this.sides]);
 
@@ -63,7 +63,7 @@ export class SidesShopService {
   }
 
   addSides(sides: Sides) {
-    console.log('SIDE ADD');
+
     this.sides.push(sides)
     this.sidesUpdated.next(this.sides.slice())
 

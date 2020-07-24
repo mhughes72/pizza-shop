@@ -6,9 +6,14 @@ textarea.ng-invalid {
 }
 
 
+.form-left {
+  float: left;
+}
 
+.form-right {
+  /* float: right; */
 
-
+}
 
 
 

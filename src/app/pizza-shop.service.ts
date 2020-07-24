@@ -13,7 +13,6 @@ export class PizzaShopService {
   private pizzasUpdated = new Subject<Pizza[]>();
 
   private pizzas: Pizza[] = [];
-
   constructor(private http: HttpClient) { }
 
 
@@ -30,13 +29,21 @@ export class PizzaShopService {
 
   public toppings: Topping[];
 
-  addPizza(pizza: Pizza) {
-    this.pizzas.push(pizza)
+
+
+  addPizza(pizza: Pizza, toppings: Topping) {
+    var pair = {'toppings': toppings};
+    // var pizzaWithToppings:Pizza = {...pizza, ...pair};
+    let pizzaWithToppings = Object.assign(pizza, pair);
+    this.pizzas.push(pizzaWithToppings)
+    console.log('pizzaWithToppings: ', pizzaWithToppings);
+    console.log('pizza: ', pair);
+
     this.pizzasUpdated.next(this.pizzas.slice())
 
-    console.log('Pizza: ', pizza)
+
     let a = this.http
-      .post<{ message: string }>("http://localhost:3000/api/pizza", pizza)
+      .post<{ message: string }>("http://localhost:3000/api/pizza", pizzaWithToppings)
       .subscribe(responseData => {
 
         // this.po
@@ -53,7 +60,7 @@ export class PizzaShopService {
     this.http
       .get<any>("http://localhost:3000/api/pizza")
       .pipe(map((postData) => {
-        console.log('postData: ', postData);
+
 
         return postData.pizza.map(post => {
           return {
@@ -67,14 +74,14 @@ export class PizzaShopService {
             fat: post.fat,
             transfat: post.transfat,
             sodium: post.sodium,
-
+            price: post.price,
             toppings: post.toppings,
           }
         })
       }))
       .subscribe(transformedPosts => {
         this.pizzas = transformedPosts;
-        console.log('transformedPosts: ', transformedPosts);
+
 
         this.pizzasUpdated.next([...this.pizzas]);
 

@@ -1,0 +1,52 @@
+<h1>PIZZA</h1>
+<!-- Make one indpiendent Form Component -->
+
+<div class="example-container">
+  <form [formGroup]="toppingsForm" (ngSubmit)="onSubmitToppings()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <br>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Image Path</mat-label>
+      <input matInput formControlName="imagePath">
+    </mat-form-field>
+    <br>
+    <!-- <h4>Basic mat-select</h4>
+    <mat-form-field appearance="fill">
+      <mat-label>Favorite food</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field> -->
+
+
+
+    <!-- <button mat-button (click)="addTopping()">Basic</button> -->
+
+
+
+    <br>
+
+    <br>
+
+
+
+    <button type="submit" mat-button [disabled]="!toppingsForm.valid">Submit</button>
+  </form>
+</div>
+<div>
+
+
+<br><br><br><br>

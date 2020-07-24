@@ -18,18 +18,21 @@ export class SaladListComponent implements OnInit {
   ngOnInit(): void {
 
     this.saladShopService.getSalads();
+    console.log('this.saladShopService.getSalads();: ', this.saladShopService.getSalads());
     this.saladSub = this.saladShopService.getPostUpdateListener()
       .subscribe((salads: Salad[]) => {
         this.salads = salads;
-      });
 
-      console.log('SALADS: ', this.salads)
+      });
+      console.log('this.salads: ', this.salads);
+
+
 
 
   }
 
   onClick() {
-    console.log('click')
+
   }
 
 
