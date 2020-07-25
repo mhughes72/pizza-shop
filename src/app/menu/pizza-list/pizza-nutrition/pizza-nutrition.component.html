@@ -1,40 +1,51 @@
-
 <mat-dialog-content class="mat-typography">
 
-<div>{{ pizza.name }}</div>
-<div>
-  <img src="../../../assets/img/pizza/{{pizza.imagePath}}" [alt]="pizza.name" class="mod-image" layout-fill>
-</div>
-<div>{{ pizza.description }}</div>
+
+  <div>
+
+    <img src="assets/img/pizza/{{pizza.imagePath}}" [alt]="pizza.name" class="mod-image" layout-fill>
+
+    <div class="top-left">{{ pizza.name }}</div>
+  </div>
+  <div>{{ pizza.description }}</div>
+
+
+  <mat-list role="list">
+    <mat-list-item role="listitem">Calories: {{ pizza.calories }}</mat-list-item>
+    <mat-list-item role="listitem">Fat: {{ pizza.fat }}</mat-list-item>
+    <mat-list-item role="listitem">Trans: {{ pizza.transfat }}</mat-list-item>
+    <mat-list-item role="listitem">Sodium: {{ pizza.sodium }}</mat-list-item>
+    <mat-list-item role="listitem">Price: {{ pizza.price }}</mat-list-item>
+  </mat-list>
 
 
 
-  <div>Calories: {{ pizza.calories }}</div>
-  <div>Fat: {{ pizza.fat }}</div>
-  <div>Trans: {{ pizza.transfat }}</div>
-  <div>Sodium: {{ pizza.sodium }}</div>
-  <div>Price: {{ pizza.price }}</div>
-
+  <div fxLayout-gt-sm="column"  fxLayout.ls-sm="row">
+    <div class="child-1" [ngStyle]="{'background-color':'primary'}" *ngFor="let topping of pizza.toppings;
+    let i = index">
+    {{ topping.name}}
+    Alfred
+    </div>
+  </div>
+  <!--
   <mat-list>
-<mat-list-item
-[ngStyle]="{'background-color':'primary'}"
-*ngFor="let topping of pizza.toppings; let i = index"
->
-<div>
-  <img src="../../../assets/img/toppings/{{topping.imagePath}}" [alt]="pizza.name" class="story__img" layout-fill>
-</div>
-<div>
-  {{ topping.name}}
+    <mat-list-item>
+      <mat-card class="topping-card"
+      [ngStyle]="{'background-color':'primary'}"
+      *ngFor="let topping of pizza.toppings;
+      let i = index"
+      >
+        <mat-card-header>
+          <mat-card-title>{{ topping.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image class="topping-img" src="assets/img/toppings/{{topping.imagePath}}" [alt]="pizza.name">
+        <mat-card-content>
+          {{ topping.description}}
+        </mat-card-content>
 
-</div>
-<div>
-  Topping: {{topping.imagePath}}
-</div>
-<div>
-  {{ topping.description}}
-</div>
-</mat-list-item>
-</mat-list>
+      </mat-card>
+
+    </mat-list-item>
+  </mat-list> -->
 
 </mat-dialog-content>
-

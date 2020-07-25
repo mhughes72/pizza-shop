@@ -6,11 +6,30 @@
 
 }
 
+.nutrition-name {
+
+  color: green;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  z-index: 99;
+}
+
+.topping-img {
+
+  max-width: 150px;
+  max-height: 150px;
+
+}
 
 
-
-
-
+.top-left {
+  color: green;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  z-index: 99;
+}
 
 
 

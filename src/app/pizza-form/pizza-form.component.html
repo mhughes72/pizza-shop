@@ -3,7 +3,7 @@
 
 
 
-
+<div class="form-left">
   <form [formGroup]="pizzaForm" (ngSubmit)="onSubmitPizza()">
     <div class="form-left">
     <mat-form-field appearance="fill">
@@ -67,9 +67,12 @@
 
 <button type="submit" mat-button [disabled]="!pizzaForm.valid">Submit</button>
 </form>
+</div>
 
+
+<div class="form-right">
 <app-toppings-form></app-toppings-form>
-
+</div>
 
 
 

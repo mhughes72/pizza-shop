@@ -22,11 +22,9 @@ const appRoutes: Routes = [
   { path: 'pizza-shop', component: PizzShopComponent, children: [
       { path: ':id', component: PizzaDetailComponent},
   ]},
-  // { path: 'specials', component: SpecialsComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'menu', component: MenuComponent, children: [
-    // { path: '', component: MenuComponent, pathMatch: 'full' },
     { path: 'pizza', component: PizzaListComponent, children: [
       { path: ':id', component: PizzaDetailComponent},
     ] },
@@ -43,7 +41,8 @@ const appRoutes: Routes = [
     ] },
 
   ]},
-  { path: 'form', component: PizzaFormComponent}
+  { path: 'form', component: PizzaFormComponent},
+  { path: '**', component: PizzaFormComponent}
 ];
 
 @NgModule({
