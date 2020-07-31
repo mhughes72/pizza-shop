@@ -36,8 +36,7 @@ export class PizzaShopService {
     // var pizzaWithToppings:Pizza = {...pizza, ...pair};
     let pizzaWithToppings = Object.assign(pizza, pair);
     this.pizzas.push(pizzaWithToppings)
-    console.log('pizzaWithToppings: ', pizzaWithToppings);
-    console.log('pizza: ', pair);
+
 
     this.pizzasUpdated.next(this.pizzas.slice())
 
@@ -84,6 +83,7 @@ export class PizzaShopService {
 
 
         this.pizzasUpdated.next([...this.pizzas]);
+        console.log("DONE!!!")
 
       });
 

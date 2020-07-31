@@ -1,56 +1,25 @@
-
-
-<!--
-<div
-  fxLayout="row wrap"
-  fxLayout.lt-sm="column"
-  fxLayoutGap="32px"
-  fxLayoutAlign="start flex-start">
-  <ng-container *ngFor="let pizza of pizzas; let i = index">
-    <app-pizza-item [pizza]="pizza" [index]="i" fxFlex="0 1 calc(25% - 32px)" (click)="onClick()"></app-pizza-item>
-  </ng-container>
-</div>
- -->
-
-
- <!-- <mat-selection-list #shoes [multiple]="false">
-  <mat-list-option class="list-item" *ngFor="let pizza of pizzas; let i = index" (click)="onClick()">
-    <img class="list-image" [src]="pizza.imagePath" [alt]="pizza.name">
-    <div class="list-content">
-      {{ pizza.name }}
-      {{ pizza.subName }}
-    </div>
-
-  </mat-list-option>
-</mat-selection-list>
-
-<p>
-  Option selected: {{shoes.selectedOptions.selected[0]?.value}}
-</p> -->
 <div class="mat-display-3">Pizza</div>
 
-<mat-grid-list  [cols]="breakpoint"
-color="primary"
-rowHeight="2:0.5"
-(window:resize)="onResize($event)"
-class="grid-list"
->
+<mat-grid-list [cols]="breakpoint" color="primary" rowHeight="2:0.5" (window:resize)="onResize($event)"
+  class="grid-list">
 
-  <mat-grid-tile class="grid-tile"
-  [ngStyle]="{'background-color':'primary'}"
-  *ngFor="let pizza of pizzas; let i = index"
-  (click)="onOpenNutrition(pizza)"
-  >
+  <mat-grid-tile class="grid-tile" [ngStyle]="{'background-color':'primary'}"
+    *ngFor="let pizza of pizzas; let i = index" (click)="onOpenNutrition(pizza)">
 
     <div class="story">
 
       <figure class="story_shape">
-          <img src="assets/img/pizza/{{pizza.imagePath}}" [alt]="pizza.name" class="story__img" layout-fill>
-          <div class="bottom-left">{{pizza.name}}</div>
-          <div class="top-right">{{pizza.price}}</div>
-          <figcaption  class="mat-display-1 story__caption">
-            {{pizza.name}}<br>
-          </figcaption>
+        <img src="assets/img/pizza/{{pizza.imagePath}}" [alt]="pizza.name" class="story__img" layout-fill>
+
+
+        <div class="pizza-banner-name-span">
+          <div class="pizza-banner-name-span--2">${{pizza.price}}</div>
+          <div class="pizza-banner-name-span--1">{{pizza.name}}</div>
+
+
+        </div>
+
+
 
       </figure>
 
@@ -59,15 +28,5 @@ class="grid-list"
   </mat-grid-tile>
 
 </mat-grid-list>
-
-<!-- linear-gradient(-225deg, rgba(0,0,0,0.6) 50%, rgba(0,36,61,0.6) 80%), -->
-
-<!-- [ngStyle]="{'background-image': '
-url('+ '../../../assets/img/pizza/' + pizza.imagePath + ' ' +')'}" -->
-
-
-
-
-
 
 

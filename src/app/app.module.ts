@@ -50,6 +50,7 @@ import { ToppingsSelectComponent } from './toppings-select/toppings-select.compo
 import { SandboxComponent } from './sandbox/sandbox.component';
 // import {DialogService} from '@angular/material/dialog';
 import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatSpinnerOverlayComponent } from './mat-spinner-overlay/mat-spinner-overlay.component';
 
 
 @NgModule({
@@ -81,6 +82,7 @@ import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/materia
     ToppingsFormComponent,
     ToppingsSelectComponent,
     SandboxComponent,
+    MatSpinnerOverlayComponent,
 
 
 

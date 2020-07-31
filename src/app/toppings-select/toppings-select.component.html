@@ -4,28 +4,24 @@
 <!-- <app-angular-material-checkbox></app-angular-material-checkbox>
  -->
 
- <mat-list role="list">
+<mat-list class="toppings-list" role="list">
   <mat-list-item role="listitem">
-    <div>
-  <mat-checkbox
-  (change)="OnChange($event)"
-  *ngFor="let topping of toppings"
-  value={{topping.name}}
-  id={{topping.id}}
-  >{{topping.name}}</mat-checkbox>
-</div>
+    <div class="toppings-item">
+      <mat-checkbox (change)="OnChange($event)" *ngFor="let topping of toppings" value={{topping.name}}
+        id={{topping.id}}>{{topping.name}}</mat-checkbox>
+    </div>
   </mat-list-item>
 </mat-list>
 
 <mat-select name="toppingString" [(value)]="selectedTopping" placeholder="Country">
 
 
-<mat-form-field appearance="fill">
-  <mat-label>Toppings</mat-label>
-  <mat-select [formControl]="toppingsForm" [(value)]="selectedTopping" multiple>
-    <mat-option *ngFor="let topping of toppings" [value]="topping">{{topping.name}}</mat-option>
-  </mat-select>
-</mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Toppings</mat-label>
+    <mat-select [formControl]="toppingsForm" [(value)]="selectedTopping" multiple>
+      <mat-option *ngFor="let topping of toppings" [value]="topping">{{topping.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
 
 </mat-select>
 

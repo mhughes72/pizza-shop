@@ -1,51 +1,47 @@
-<mat-dialog-content class="mat-typography">
+<mat-dialog-content class="nutrition-modal">
 
+  <div class="toppings-banner">
 
-  <div>
+    <img src="assets/img/pizza/{{pizza.imagePath}}" [alt]="pizza.name" class="modal-image" layout-fill>
+    <h4 class="nutrition-banner-name">
+      <div class="nutrition-banner-name-span nutrition-banner-name-span--1">{{ pizza.name }}</div>
+    </h4>
+    <h4 class="nutrition-banner-name">
+      <div class="nutrition-banner-name-span nutrition-banner-name-span--2">Just ${{ pizza.price }}!</div>
+    </h4>
 
-    <img src="assets/img/pizza/{{pizza.imagePath}}" [alt]="pizza.name" class="mod-image" layout-fill>
-
-    <div class="top-left">{{ pizza.name }}</div>
   </div>
   <div>{{ pizza.description }}</div>
 
+  <br>
+  <div class="nutrition">
+    Calories: {{ pizza.calories }} |
+    Fat: {{ pizza.fat }} |
+    Transfat: {{ pizza.transfat }} |
+    Sodium: {{ pizza.sodium }}
+  </div>
 
-  <mat-list role="list">
-    <mat-list-item role="listitem">Calories: {{ pizza.calories }}</mat-list-item>
-    <mat-list-item role="listitem">Fat: {{ pizza.fat }}</mat-list-item>
-    <mat-list-item role="listitem">Trans: {{ pizza.transfat }}</mat-list-item>
-    <mat-list-item role="listitem">Sodium: {{ pizza.sodium }}</mat-list-item>
-    <mat-list-item role="listitem">Price: {{ pizza.price }}</mat-list-item>
-  </mat-list>
+  <div class="toppings-title">
 
-
-
-  <div fxLayout-gt-sm="column"  fxLayout.ls-sm="row">
-    <div class="child-1" [ngStyle]="{'background-color':'primary'}" *ngFor="let topping of pizza.toppings;
-    let i = index">
-    {{ topping.name}}
-    Alfred
+    Toppings
+  </div>
+  <br>
+  <div [ngStyle]="{'background-color':'primary'}" *ngFor="let topping of pizza.toppings;
+  let i = index" class="toppings-list">
+    <div class="toppings-image">
+      <img mat-card-image class="toppings-img" src="assets/img/toppings/{{topping.imagePath}}" [alt]="pizza.name">
+    </div>
+    <div class="toppings-name">
+      {{ topping.name }}
+    </div>
+    <div class="toppings-description">
+      {{ topping.description }}
     </div>
   </div>
-  <!--
-  <mat-list>
-    <mat-list-item>
-      <mat-card class="topping-card"
-      [ngStyle]="{'background-color':'primary'}"
-      *ngFor="let topping of pizza.toppings;
-      let i = index"
-      >
-        <mat-card-header>
-          <mat-card-title>{{ topping.name}}</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image class="topping-img" src="assets/img/toppings/{{topping.imagePath}}" [alt]="pizza.name">
-        <mat-card-content>
-          {{ topping.description}}
-        </mat-card-content>
-
-      </mat-card>
-
-    </mat-list-item>
-  </mat-list> -->
-
 </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Order Now</button>
+  </mat-dialog-actions>
+

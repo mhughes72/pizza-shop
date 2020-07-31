@@ -1,37 +1,115 @@
+.nutrition-modal {
+  /* padding: 0px; */
+}
 
-
-.mod-image {
-
+.modal-image {
   width: 100%;
+}
+
+.nutrition {
+  float: left;
+  font-weight: bold;
+}
+
+
+
+.nutrition-banner-name {
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+  color: #fff;
+
+  width: 75%;
+
+}
+.nutrition-banner-name-span {
+  /* padding: 1rem 1.5rem; */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone; }
+  .nutrition-banner-name-span--1 {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 32px;
+    background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+  .nutrition-banner-name-span--2 {
+    position: absolute;
+    bottom: 8px;
+    right: 80px;
+    font-size: 64px;
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+  .card__heading-span--3 {
+    background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+
+
+.toppings-list {
+  float: left;
+  width: 100%;
+}
+
+.toppings-image {
+  float: left;
+}
+
+.toppings-description {
 
 }
 
+.toppings-title {
+  margin-top: 50px;
+  margin-bottom: -10px;
+  font-size: 32px;
+  clear: both;
+}
+
+.toppings-name {
+  margin-bottom: 15px;
+
+}
+
+.toppings-name {
+  color: blue;
+  font-weight: bold;
+}
+
+.toppings-banner {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.topping-description {
+  float: left;
+}
+
+.toppings-img {
+  max-width: 100px;
+  max-height: 100px;
+  float: left;
+  margin: 0px 10px 5px 5px;
+}
+
+.toppings-list {
+  float: right;
+}
+
+.nutrition-table {
+  table-layout: fixed;
+  width: 180px;
+  float: left;
+}
 .nutrition-name {
+  width: 180px;
+}
+.nutrition-value {
+  width: 180px;
+}
 
-  color: green;
+
+.nutrition-banner-price {
+
   position: absolute;
-  top: 8px;
-  left: 16px;
-  z-index: 99;
+  bottom: 8px;
+  right: 16px;
+  font-size: 64px;
 }
-
-.topping-img {
-
-  max-width: 150px;
-  max-height: 150px;
-
-}
-
-
-.top-left {
-  color: green;
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  z-index: 99;
-}
-
-
-
-
-

@@ -22,6 +22,27 @@
   background-position: 50% 50%; */
 }
 
+.pizza-banner-name-span {
+  /* padding: 1rem 1.5rem; */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone; }
+  .pizza-banner-name-span--1 {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size:2vw;
+    background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+  .pizza-banner-name-span--2 {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size:2vw;
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+  .card__heading-span--3 {
+    background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+
+
+
 .bottom-left {
   position: absolute;
   bottom: 8px;
