@@ -18,7 +18,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
   entryComponents: [PizzaNutritionComponent]
 })
 export class PizzaListComponent implements OnInit {
-
+  isLoading = true;
   pizzas: Pizza[];
   private pizzasSub: Subscription;
   public imgPizzaPath: String;
@@ -31,11 +31,12 @@ export class PizzaListComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) data) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.pizzaShopService.getPizzas();
     this.pizzasSub = this.pizzaShopService.getPostUpdateListener()
       .subscribe((pizzas: Pizza[]) => {
         this.pizzas = pizzas;
-
+        this.isLoading = false;
       });
       console.log('this.pizzas: ', this.pizzas);
     this.breakpoint = (window.innerWidth <= 500) ? 1 : 2;

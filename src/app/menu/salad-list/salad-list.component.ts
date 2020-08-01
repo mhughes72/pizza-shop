@@ -9,20 +9,20 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./salad-list.component.css']
 })
 export class SaladListComponent implements OnInit {
-
+  isLoading = true;
   salads: Salad[];
   private saladSub: Subscription;
 
   constructor(private saladShopService: SaladShopService) { }
 
   ngOnInit(): void {
-
+    this.isLoading = true;
     this.saladShopService.getSalads();
     console.log('this.saladShopService.getSalads();: ', this.saladShopService.getSalads());
     this.saladSub = this.saladShopService.getPostUpdateListener()
       .subscribe((salads: Salad[]) => {
         this.salads = salads;
-
+        this.isLoading = false;
       });
       console.log('this.salads: ', this.salads);
 

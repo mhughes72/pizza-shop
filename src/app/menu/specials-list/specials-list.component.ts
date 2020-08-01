@@ -9,6 +9,7 @@ import { SpecialsShopService } from 'src/app/specials-shop.service';
   styleUrls: ['./specials-list.component.css']
 })
 export class SpecialsListComponent implements OnInit {
+  isLoading = true;
 
   specials: Specials[];
   private specialsSub: Subscription;
@@ -16,11 +17,14 @@ export class SpecialsListComponent implements OnInit {
   constructor(private specialsShopService: SpecialsShopService) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
 
     this.specialsShopService.getSpecials();
 
     this.specialsSub = this.specialsShopService.getPostUpdateListener()
       .subscribe((specials: Specials[]) => {
+        this.isLoading = false;
+
         this.specials = specials;
       });
 

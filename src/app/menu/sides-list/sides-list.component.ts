@@ -10,17 +10,18 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./sides-list.component.css']
 })
 export class SidesListComponent implements OnInit {
-
+  isLoading = true;
   sides: Sides[];
   private sidesSub: Subscription;
 
   constructor(private sidesShopService: SidesShopService) { }
 
   ngOnInit(): void {
-
+    this.isLoading = true;
     this.sidesShopService.getSides();
     this.sidesSub = this.sidesShopService.getPostUpdateListener()
       .subscribe((sides: Sides[]) => {
+        this.isLoading = false;
         this.sides = sides;
       });
 

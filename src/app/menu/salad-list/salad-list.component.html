@@ -1,7 +1,10 @@
 
 
 <div class="mat-display-3">Salads</div>
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+
 <div
+*ngIf="!isLoading"
 fxLayout="row wrap"
 fxLayout.lt-sm="column"
 fxLayoutGap="32px"

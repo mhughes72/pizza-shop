@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
+  apiUrl: "https://mean-pizza-shop.herokuapp.com/api",
   firebase: {
     apiKey: "AIzaSyBYH4rIan768DG4fLTYQQOJ0CRvEygM1mI",
     authDomain: "mean-stack-pizza.firebaseapp.com",

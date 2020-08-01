@@ -6,6 +6,10 @@ import { HttpClient } from "@angular/common/http";
 import { map } from 'rxjs/operators';
 import { Subject } from "rxjs";
 
+import { environment } from "../environments/environment"
+const  BACKEND_URL = environment.apiUrl + "/sides";
+
+
 
 @Injectable()
 export class SidesShopService {
@@ -23,7 +27,7 @@ export class SidesShopService {
   getSides() {
 
     this.http
-      .get<any>("http://localhost:3000/api/sides")
+      .get<any>(BACKEND_URL)
       .pipe(map((postData) => {
 
 
@@ -68,7 +72,7 @@ export class SidesShopService {
     this.sidesUpdated.next(this.sides.slice())
 
     let a = this.http
-      .post<{ message: string }>("http://localhost:3000/api/sides", sides)
+      .post<{ message: string }>(BACKEND_URL, sides)
       .subscribe(responseData => {
 
       })

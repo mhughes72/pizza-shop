@@ -5,6 +5,8 @@ import { HttpClient } from "@angular/common/http";
 import { map } from 'rxjs/operators';
 import { Subject } from "rxjs";
 
+import { environment } from "../environments/environment"
+const  BACKEND_URL = environment.apiUrl + "/toppings";
 
 @Injectable()
 export class ToppingShopService {
@@ -28,7 +30,7 @@ export class ToppingShopService {
 
 
     let a = this.http
-      .post<{ message: string }>("http://localhost:3000/api/toppings", topping)
+      .post<{ message: string }>(BACKEND_URL, topping)
       .subscribe(responseData => {
 
         // this.po
@@ -43,7 +45,7 @@ export class ToppingShopService {
   getToppings() {
 
     this.http
-      .get<any>("http://localhost:3000/api/toppings")
+      .get<any>(BACKEND_URL)
       .pipe(map((postData) => {
 
         console.log('postData.toppings: ', postData.toppings);

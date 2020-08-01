@@ -11,8 +11,6 @@ export class MenuComponent implements OnInit {
 
 
 
-  loaded: Boolean = true;
-
   ngOnInit(): void {
   }
 

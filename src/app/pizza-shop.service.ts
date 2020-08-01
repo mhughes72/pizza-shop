@@ -5,7 +5,10 @@ import { Topping } from './topping.models';
 import { HttpClient } from "@angular/common/http";
 import { map } from 'rxjs/operators';
 import { Subject } from "rxjs";
+import { Router } from '@angular/router';
 
+import { environment } from "../environments/environment"
+const  BACKEND_URL = environment.apiUrl + "/pizza";
 
 @Injectable()
 export class PizzaShopService {
@@ -13,7 +16,8 @@ export class PizzaShopService {
   private pizzasUpdated = new Subject<Pizza[]>();
 
   private pizzas: Pizza[] = [];
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+                  private router: Router) { }
 
 
   public id: string;
@@ -42,10 +46,11 @@ export class PizzaShopService {
 
 
     let a = this.http
-      .post<{ message: string }>("http://localhost:3000/api/pizza", pizzaWithToppings)
+      .post<{ message: string }>(BACKEND_URL, pizzaWithToppings)
       .subscribe(responseData => {
+        //THIS IS HOW WE NAVIGATE AWAY TO A DIFFERENT PAGE ON FINISH
+        this.router.navigate(["/"])
 
-        // this.po
       })
 
 
@@ -57,7 +62,7 @@ export class PizzaShopService {
   getPizzas() {
 
     this.http
-      .get<any>("http://localhost:3000/api/pizza")
+      .get<any>(BACKEND_URL)
       .pipe(map((postData) => {
 
 
