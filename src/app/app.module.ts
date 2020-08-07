@@ -51,6 +51,9 @@ import { SandboxComponent } from './sandbox/sandbox.component';
 // import {DialogService} from '@angular/material/dialog';
 import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSpinnerOverlayComponent } from './mat-spinner-overlay/mat-spinner-overlay.component';
+import { SpecialsNutritionComponent } from './menu/specials-list/specials-nutrition/specials-nutrition.component';
+import { SidesNutritionComponent } from './menu/sides-list/sides-nutrition/sides-nutrition.component';
+import { SaladNutritionComponent } from './menu/salad-list/salad-nutrition/salad-nutrition.component';
 
 
 @NgModule({
@@ -83,6 +86,9 @@ import { MatSpinnerOverlayComponent } from './mat-spinner-overlay/mat-spinner-ov
     ToppingsSelectComponent,
     SandboxComponent,
     MatSpinnerOverlayComponent,
+    SpecialsNutritionComponent,
+    SidesNutritionComponent,
+    SaladNutritionComponent,
 
 
 

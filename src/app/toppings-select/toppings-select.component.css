@@ -1,22 +1,17 @@
 
+.toppings-list {
 
 
+  padding: 20px;
+  margin-bottom: 40px;
 
+}
 
 .toppings-item {
 
-width: 100px;
+  width: 100px;
 
-}
-
-.toppings-list {
-
-float: left;
-
-
-}
-
-
+  }
 
 
 

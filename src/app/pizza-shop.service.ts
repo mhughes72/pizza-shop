@@ -1,14 +1,13 @@
 import { EventEmitter, Injectable } from '@angular/core';
-
 import { Pizza } from './menu/pizza-list/pizza.models';
 import { Topping } from './topping.models';
 import { HttpClient } from "@angular/common/http";
 import { map } from 'rxjs/operators';
 import { Subject } from "rxjs";
 import { Router } from '@angular/router';
-
 import { environment } from "../environments/environment"
-const  BACKEND_URL = environment.apiUrl + "/pizza";
+
+const BACKEND_URL = environment.apiUrl + "/pizza";
 
 @Injectable()
 export class PizzaShopService {
@@ -17,55 +16,23 @@ export class PizzaShopService {
 
   private pizzas: Pizza[] = [];
   constructor(private http: HttpClient,
-                  private router: Router) { }
-
+    private router: Router) { }
 
   public id: string;
   public name: string;
   public subName: string;
   public description: string;
   public imagePath: string;
-
   public calories: number;
   public fat: number;
   public transfat: number;
   public sodium: number;
-
   public toppings: Topping[];
 
-
-
-  addPizza(pizza: Pizza, toppings: Topping) {
-    var pair = {'toppings': toppings};
-    // var pizzaWithToppings:Pizza = {...pizza, ...pair};
-    let pizzaWithToppings = Object.assign(pizza, pair);
-    this.pizzas.push(pizzaWithToppings)
-
-
-    this.pizzasUpdated.next(this.pizzas.slice())
-
-
-    let a = this.http
-      .post<{ message: string }>(BACKEND_URL, pizzaWithToppings)
-      .subscribe(responseData => {
-        //THIS IS HOW WE NAVIGATE AWAY TO A DIFFERENT PAGE ON FINISH
-        this.router.navigate(["/"])
-
-      })
-
-
-  }
-
-
-
-
   getPizzas() {
-
     this.http
       .get<any>(BACKEND_URL)
       .pipe(map((postData) => {
-
-
         return postData.pizza.map(post => {
           return {
             id: post._id,
@@ -73,7 +40,6 @@ export class PizzaShopService {
             subName: post.subName,
             description: post.description,
             imagePath: post.imagePath,
-
             calories: post.calories,
             fat: post.fat,
             transfat: post.transfat,
@@ -85,14 +51,23 @@ export class PizzaShopService {
       }))
       .subscribe(transformedPosts => {
         this.pizzas = transformedPosts;
-
-
         this.pizzasUpdated.next([...this.pizzas]);
-        console.log("DONE!!!")
-
       });
-
   }
+
+  addPizza(pizza: Pizza, toppings: Topping) {
+    var pair = { 'toppings': toppings };
+    let pizzaWithToppings = Object.assign(pizza, pair);
+    this.pizzas.push(pizzaWithToppings)
+    this.pizzasUpdated.next(this.pizzas.slice())
+    let a = this.http
+      .post<{ message: string }>(BACKEND_URL, pizzaWithToppings)
+      .subscribe(responseData => {
+        //THIS IS HOW WE NAVIGATE AWAY TO A DIFFERENT PAGE ON FINISH
+        this.router.navigate(["/"])
+      })
+  }
+
 
   getPizza(index: number) {
     return this.pizzas[index];
@@ -101,6 +76,5 @@ export class PizzaShopService {
   getPostUpdateListener() {
     return this.pizzasUpdated.asObservable();
   }
-
 
 }

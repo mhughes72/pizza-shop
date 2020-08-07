@@ -8,11 +8,13 @@ textarea.ng-invalid {
 
 .form-left {
   float: left;
+  margin: 40px 40px 40px 40px;
+
 }
 
 .form-right {
-  float: left;
 
+  margin: 40px 40px 40px 40px;
 }
 
 

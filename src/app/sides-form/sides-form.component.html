@@ -1,94 +1,63 @@
-SIDES FORM
-<div class="example-container">
-  <form [formGroup]="sidesForm" (ngSubmit)="onSubmitSides()">
-    <mat-form-field appearance="fill">
-      <mat-label>Name</mat-label>
-      <input matInput formControlName="name">
-    </mat-form-field>
-    <br>
+<div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="start" fxLayoutGap="10px" fxLayoutGap.xs="0">
+  <div class="item item-1" fxFlex="30%">
+    <h1>SIDES</h1>
+    <form [formGroup]="sidesForm" (ngSubmit)="onSubmitSides()">
 
-    <mat-form-field appearance="fill">
-      <mat-label>Sub Name</mat-label>
-      <input matInput formControlName="subName">
-    </mat-form-field>
-    <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Sub Name</mat-label>
+        <input matInput formControlName="subName">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <input matInput formControlName="description">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Image Path</mat-label>
+        <input matInput formControlName="imagePath">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>calories</mat-label>
+        <input matInput formControlName="calories">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>fat</mat-label>
+        <input matInput formControlName="fat">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>transfat</mat-label>
+        <input matInput formControlName="transfat">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>sodium</mat-label>
+        <input matInput formControlName="sodium">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>price</mat-label>
+        <input matInput formControlName="price">
+      </mat-form-field>
+      <br>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Description</mat-label>
-      <input matInput formControlName="description">
-    </mat-form-field>
-    <br>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Image Path</mat-label>
-      <input matInput formControlName="imagePath">
-    </mat-form-field>
-    <br>
-
-
-    <mat-form-field appearance="fill">
-      <mat-label>calories</mat-label>
-      <input matInput formControlName="calories">
-    </mat-form-field>
-    <br>
-
-    <mat-form-field appearance="fill">
-      <mat-label>fat</mat-label>
-      <input matInput formControlName="fat">
-    </mat-form-field>
-    <br>
-
-    <mat-form-field appearance="fill">
-      <mat-label>transfat</mat-label>
-      <input matInput formControlName="transfat">
-    </mat-form-field>
-    <br>
-
-    <mat-form-field appearance="fill">
-      <mat-label>sodium</mat-label>
-      <input matInput formControlName="sodium">
-    </mat-form-field>
-    <br>
-
-    <mat-form-field appearance="fill">
-      <mat-label>price</mat-label>
-      <input matInput formControlName="price">
-    </mat-form-field>
-    <br>
+      <button type="submit" mat-button [disabled]="!sidesForm.valid">Submit</button>
+    </form>
+  </div>
 
 
+  <div class="item item-2" fxFlex="30%">
+    <app-toppings-select (valueChange)="updateToppings($event)"></app-toppings-select>
+  </div>
+  <div class="item item-4" fxFlex="40%">
 
-    <div class="" formArrayName="toppings">
-      <div *ngFor="let toppingCtrl of sidesForm.get('toppings')['controls']; let i = index"
-      [formGroupName]="i">
-
-        <mat-form-field appearance="fill">
-          <mat-label>Name</mat-label>
-          <input formControlName="name" matInput>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Description</mat-label>
-          <input formControlName="description" matInput>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Image Path</mat-label>
-          <input formControlName="imagePath" matInput>
-        </mat-form-field>
-
-      </div>
-      <div class="row">
-        <button mat-button (click)="onAddTopping()">Add Topping</button>
-      </div>
-    </div>
-    <br>
-
-    <button type="submit" mat-button [disabled]="!sidesForm.valid">Submit</button>
-  </form>
-</div>
-<div>
-
-
-
+  </div>
 </div>

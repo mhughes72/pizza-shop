@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-// import { Pizza } from '../menu/pizza-list/pizza.models';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { PizzaShopService } from '../pizza-shop.service';
 import { Topping } from '../topping.models';
@@ -10,25 +9,19 @@ import { Topping } from '../topping.models';
   styleUrls: ['./pizza-form.component.css']
 })
 export class PizzaFormComponent implements OnInit {
-
+  @Input() selectedToppingArray: Topping;
   pizzaForm: FormGroup;
   constructor(private pizzaShopService: PizzaShopService) { }
-  toppings: Topping
+  toppings: Topping;
   ngOnInit(): void {
     this.initForm();
   }
 
-
   updateToppings($event) {
-    console.log('EVENT: ', $event)
     this.toppings = $event;
-
   }
 
   private initForm() {
-    let pizzaName = '';
-    let toppings = new FormArray([]);
-
 
     this.pizzaForm = new FormGroup({
       'name': new FormControl('Matt', Validators.required),
@@ -40,34 +33,24 @@ export class PizzaFormComponent implements OnInit {
       'transfat': new FormControl(),
       'sodium': new FormControl(),
       'price': new FormControl(),
-      // 'toppings': this.toppings
 
     })
   }
 
+  onAddTopping() {
 
-onAddTopping() {
-  (<FormArray>this.pizzaForm.get('toppings')).push(
-    new FormGroup({
-      'name': new FormControl(),
-      'description': new FormControl(),
-      'imagePath': new FormControl()
-    })
-  )
+    (<FormArray>this.pizzaForm.get('toppings')).push(
+      new FormGroup({
+        'name': new FormControl(),
+        'description': new FormControl(),
+        'imagePath': new FormControl()
+      })
+    )
 
-}
-
+  }
 
   onSubmitPizza() {
-    console.log('this.toppings: ', this.toppings);
-    console.log('this.pizzaForm.value: ', this.pizzaForm.value);
     this.pizzaShopService.addPizza(this.pizzaForm.value, this.toppings)
-
-
-  }j
-
-  addTopping() {
-    console.log('ADD')
   }
 
 }

@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 const pizzaSchema = mongoose.Schema({
   name: { type: String, required: true },
-  subName: { type: String},
+  subName: { type: String },
   description: { type: String },
-  imagePath: { type: String},
+  imagePath: { type: String },
 
   calories: { type: Number },
   fat: { type: Number },
@@ -14,7 +14,7 @@ const pizzaSchema = mongoose.Schema({
 
   toppings: [{
 
-    name: { type: String},
+    name: { type: String },
     description: { type: String },
     imagePath: { type: String },
   }]

@@ -1,28 +1,136 @@
-<!-- <div class="welcome" fxLayout="column" fxLayout.gt-md="row" fxLayoutAlign="center center" fxLayoutGap.gt-md="20px">
-  <section>
-    <h1>ACTIVITY</h1>
-    <p>Stay active and enjoy better health and more fun!</p>
-  </section>
-  <section>
-    <h1>COMMUNITY</h1>
-    <p>Get to know other people who share your passion!</p>
-  </section>
-  <section>
-    <h1>CHALLENGES</h1>
-    <p>Never stop! Dive into new challenges every day</p>
-  </section> -->
+<!-- <app-header></app-header> -->
+<!-- <app-menu></app-menu> -->
 
-  <app-menu></app-menu>
+<div class="front-page">
+  <div class="top-banner" fxLayout fxLayout.lt-sm="column" fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="50px"
+    fxLayoutGap.xs="0">
+    <div class="front-card" fxFlex="100">
+
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Our Promise to You</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            The promise of pure, or as Nonna would say, puro, is the foundation of everything we do. From farmer to your doorstep, you deserve only the best. It’s why we pledge to source only the best ingredients from farmers and producers who share our commitment to quality, and it’s why we use recipes and preparation methods that ensure our food is as fresh as possible. It’s a promise that’s easy to keep - trust us, you’ll taste the difference.          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button routerLink="/menu" routerLinkActive="active">TAKE A LOOK</button>
+        </mat-card-actions>
+      </mat-card>
 
 
-  <!-- <div
-  fxLayout="row wrap"
-  fxLayout.lt-sm="column"
-  fxLayoutGap="32px"
-  fxLayoutAlign="flex-start">
-  <ng-container *ngFor="let l of [1,2,3,4,5,6]">
-    <app-card01 [myImg]=l fxFlex="0 1 calc(33.3% - 32px)"></app-card01>
-  </ng-container>
-</div> -->
+    </div>
+  </div>
 
-<!-- </div> -->
+
+  <div class="card-links" fxLayout fxLayout.lt-sm="row" fxLayout="row" fxLayoutAlign="start" fxLayoutGap="50px"
+    fxLayoutGap.xs="0">
+
+    <div class="front-card" fxFlex="25">
+      <mat-card routerLink="/menu" routerLinkActive="active" class="example-card">
+        <mat-card-header>
+          <mat-card-title>Signature Pizzas</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>TAKE A LOOK</button>
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+
+    <div class="front-card" fxFlex="25">
+      <mat-card class="example-card" routerLink="/menu" routerLinkActive="active">
+        <mat-card-header>
+          <mat-card-title>Old Favourites</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>TAKE A LOOK</button>
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+
+    <div class="front-card" fxFlex="25">
+      <mat-card class="example-card" routerLink="/menu" routerLinkActive="active">
+        <mat-card-header>
+          <mat-card-title>Pasta & Salads</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>TAKE A LOOK</button>
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+
+    <div class="front-card" fxFlex="25">
+      <mat-card class="example-card" routerLink="/menu" routerLinkActive="active">
+        <mat-card-header>
+          <mat-card-title>Classic Sides</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>TAKE A LOOK</button>
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+  </div>
+  <div class="banner-bottom" fxLayout fxLayout.lt-sm="column" fxLayout="row" fxLayoutAlign="start" fxLayoutGap="50px"
+    fxLayoutGap.xs="0">
+    <div class="front-card" fxFlex="100">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Signature Pizzas</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>TAKE A LOOK</button>
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+  </div>
+</div>

@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 const specialsSchema = mongoose.Schema({
   name: { type: String, required: true },
-  subName: { type: String, required: true },
-  description: { type: String, required: true },
-  imagePath: { type: String, required: true },
+  subName: { type: String },
+  description: { type: String },
+  imagePath: { type: String },
 
   calories: { type: Number},
   fat: { type: Number},
@@ -14,9 +14,9 @@ const specialsSchema = mongoose.Schema({
 
   toppings: [{
 
-    name: { type: String, required: true },
-    description: { type: String, required: true },
-    imagePath: { type: String, required: true },
+    name: { type: String },
+    description: { type: String },
+    imagePath: { type: String },
   }]
 
 

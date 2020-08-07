@@ -20,6 +20,64 @@ a:active {
   padding-left: 6px;
 }
 
+.header-group {
+
+  margin-top: 150px;
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+
+}
+
+
+.header-img {
+
+  margin-top: 50px;
+  max-width:100%;
+  height: auto;
+  float: left;
+
+}
+
+.header-title {
+
+  margin-top: 250px;
+  max-width: 100%;
+  height: auto;
+  float: clear;
+
+}
+
+
+.header-subtitle {
+
+  margin-top: 250px;
+  /* max-width: 50%; */
+  height: auto;
+  color: black;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

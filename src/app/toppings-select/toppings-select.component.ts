@@ -13,11 +13,9 @@ import { Subscription } from 'rxjs';
 export class ToppingsSelectComponent implements OnInit, AfterViewInit {
   private toppingsSub: Subscription;
 
-
-  test: Array<string> = ["hello", "bye", "fuck"];
   toppings: Topping[];
   selectedToppingArray: Topping[] = [];
-  @Output() valueChange= new EventEmitter<any>();
+  @Output() valueChange = new EventEmitter<any>();
   selectedTopping: string;
   toppingsForm = new FormControl(this.selectedTopping);
   constructor(private toppingShopService: ToppingShopService) { }
@@ -30,12 +28,13 @@ export class ToppingsSelectComponent implements OnInit, AfterViewInit {
 
       });
   }
-  updateAllComplete() { }
-  ngOnInit(): void {}
+  // updateAllComplete() { }
+  ngOnInit(): void { }
 
   OnChange($event) {
+    
     const result = this.toppings.find(({ name }) => name === $event.source.value);
-    console.log('this.selectedToppingArray: ', this.selectedToppingArray);
+
     if ($event.checked) {
       this.selectedToppingArray.push(result)
       this.valueChange.emit(this.selectedToppingArray);
@@ -46,18 +45,10 @@ export class ToppingsSelectComponent implements OnInit, AfterViewInit {
         }
       }
     }
-      console.log(this.selectedToppingArray)
-
-
-      const checkedBox = $event.source.value;
-      // const found = this.toppings.find(element => element == checkedBox);
-
-
-
-
-
-    }
-
-
+    console.log('CHANGE: ', this.selectedToppingArray)
+    const checkedBox = $event.source.value;
+    // const found = this.toppings.find(element => element == checkedBox);
 
   }
+
+}
