@@ -2,9 +2,9 @@
 <!-- <app-menu></app-menu> -->
 
 <div class="front-page">
-  <div class="top-banner" fxLayout fxLayout.lt-sm="column" fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="50px"
+  <div class="top-banner" fxLayout fxHide.lt-sm fxLayout="row" fxLayoutAlign="start" fxLayoutGap="50px"
     fxLayoutGap.xs="0">
-    <div class="front-card" fxFlex="100">
+    <div class="front-card" fxFlex="100" fxFlex.sm="0">
 
       <mat-card class="example-card">
         <mat-card-header>
@@ -24,10 +24,11 @@
   </div>
 
 
-  <div class="card-links" fxLayout fxLayout.lt-sm="row" fxLayout="row" fxLayoutAlign="start" fxLayoutGap="50px"
-    fxLayoutGap.xs="0">
+  <div class="card-links" fxLayout fxLayout.lt-sm="column"
+  fxLayout="row" fxLayoutAlign="start" fxLayoutGap="30px"
+    fxLayoutGap.xs="20">
 
-    <div class="front-card" fxFlex="25">
+    <div class="front-card" fxFlex.gt-md="25" fxFlex.lt-md="50" fxFlex.lt-sm="100">
       <mat-card routerLink="/menu" routerLinkActive="active" class="example-card">
         <mat-card-header>
           <mat-card-title>Signature Pizzas</mat-card-title>
@@ -48,7 +49,7 @@
 
     </div>
 
-    <div class="front-card" fxFlex="25">
+    <div class="front-card" fxFlex.gt-md="25" fxFlex.lt-md="50" fxFlex.lt-sm="100">
       <mat-card class="example-card" routerLink="/menu" routerLinkActive="active">
         <mat-card-header>
           <mat-card-title>Old Favourites</mat-card-title>
@@ -69,7 +70,7 @@
 
     </div>
 
-    <div class="front-card" fxFlex="25">
+    <div class="front-card" fxFlex.gt-md="25" fxFlex.lt-md="50" fxFlex.lt-sm="100">
       <mat-card class="example-card" routerLink="/menu" routerLinkActive="active">
         <mat-card-header>
           <mat-card-title>Pasta & Salads</mat-card-title>
@@ -90,7 +91,7 @@
 
     </div>
 
-    <div class="front-card" fxFlex="25">
+    <div class="front-card" fxFlex.gt-md="25" fxFlex.lt-md="50" fxFlex.lt-sm="100">
       <mat-card class="example-card" routerLink="/menu" routerLinkActive="active">
         <mat-card-header>
           <mat-card-title>Classic Sides</mat-card-title>
@@ -111,9 +112,10 @@
 
     </div>
   </div>
-  <div class="banner-bottom" fxLayout fxLayout.lt-sm="column" fxLayout="row" fxLayoutAlign="start" fxLayoutGap="50px"
+  <div class="banner-bottom" fxLayout fxHide.lt-sm
+  fxLayout="row" fxLayoutAlign="start" fxLayoutGap="50px"
     fxLayoutGap.xs="0">
-    <div class="front-card" fxFlex="100">
+    <div class="front-card" fxFlex="100"  fxFlex.xs="0">
       <mat-card class="example-card">
         <mat-card-header>
           <mat-card-title>Signature Pizzas</mat-card-title>

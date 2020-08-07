@@ -8,11 +8,21 @@
     <mat-icon>calendar_today</mat-icon>
     <span class="nav-caption">Login</span>
   </a>
-  <a *ngIf="isAuth" mat-list-item matrouterLink="/specials" (click)="onClose()">
-    <mat-icon>commute</mat-icon>
-    <span class="nav-caption">Specials</span>
+  <a *ngIf="!isAuth" mat-list-item matrouterLink="/logout" (click)="onClose()">
+    <mat-icon>calendar_today</mat-icon>
+    <span class="nav-caption">Logout</span>
   </a>
-  <mat-list-item>
-    <button mat-raised-button>Fuck off</button>
-  </mat-list-item>
+  <a *ngIf="isAuth" mat-list-item matrouterLink="/make" (click)="onClose()">
+    <mat-icon>Make sum 'zaa</mat-icon>
+    <span class="nav-caption">About</span>
+  </a>
+  <a mat-list-item matrouterLink="/about" (click)="onClose()">
+    <mat-icon>commute</mat-icon>
+    <span class="nav-caption">About</span>
+  </a>
+  <a mat-list-item matrouterLink="/contact" (click)="onClose()">
+    <mat-icon>commute</mat-icon>
+    <span class="nav-caption">Contact</span>
+  </a>
+
 </mat-nav-list>

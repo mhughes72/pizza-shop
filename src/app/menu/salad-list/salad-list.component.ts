@@ -70,9 +70,8 @@ export class SaladListComponent implements OnInit {
   }
   getBackground(image) {
 
-    const thisImg = this._sanitizer.bypassSecurityTrustStyle('../../../assets/img/salad/' + image);
+    const thisImg = this._sanitizer.bypassSecurityTrustStyle('../../../assets/img/pasta/' + image);
 
-    const thisImg2 = "../../../assets/img/salad/chicken.jpg"
     return thisImg;
   }
 

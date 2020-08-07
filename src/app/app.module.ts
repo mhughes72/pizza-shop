@@ -54,6 +54,7 @@ import { MatSpinnerOverlayComponent } from './mat-spinner-overlay/mat-spinner-ov
 import { SpecialsNutritionComponent } from './menu/specials-list/specials-nutrition/specials-nutrition.component';
 import { SidesNutritionComponent } from './menu/sides-list/sides-nutrition/sides-nutrition.component';
 import { SaladNutritionComponent } from './menu/salad-list/salad-nutrition/salad-nutrition.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -89,6 +90,7 @@ import { SaladNutritionComponent } from './menu/salad-list/salad-nutrition/salad
     SpecialsNutritionComponent,
     SidesNutritionComponent,
     SaladNutritionComponent,
+    FooterComponent,
 
 
 

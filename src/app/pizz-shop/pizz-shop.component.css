@@ -4,15 +4,19 @@
 
 .front-page {
 
-  margin: 175px;
+  margin: 15px;
 
 }
 
 .card-links {
-
+  cursor: pointer;
   margin: 25px;
 }
-
+/*
+.front-card {
+  width: 200px;
+  height: 500px;
+} */
 
 
 

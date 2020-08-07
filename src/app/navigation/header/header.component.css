@@ -21,11 +21,12 @@ a:active {
 }
 
 .header-group {
-
-  margin-top: 150px;
-  max-width: 100%;
-  height: auto;
   position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  cursor: pointer;
+
 
 }
 
@@ -36,6 +37,7 @@ a:active {
   max-width:100%;
   height: auto;
   float: left;
+  float: none;
 
 }
 
