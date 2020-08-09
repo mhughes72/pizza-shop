@@ -1,17 +1,22 @@
 @import '~@angular/material/theming';
 
-
-
 @include mat-core();
+$custom-theme-primary: mat-palette($mat-grey, 900);
+$custom-theme-accent:mat-palette($mat-pink, A200, A100, A400);
+$custom-theme-warn: mat-palette($mat-red);
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+@include angular-material-theme($custom-theme);
 
-$my-theme-primary: mat-palette($mat-deep-orange);
-$my-theme-accent: mat-palette($mat-deep-orange, A200, A100, A400);
-$my-theme-warn: mat-palette($mat-red);
+// @include mat-core();
 
-$my-theme: mat-light-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
+// $my-theme-primary: mat-palette($mat-deep-orange);
+// $my-theme-accent: mat-palette($mat-deep-orange, A200, A100, A400);
+// $my-theme-warn: mat-palette($mat-red);
+
+// $my-theme: mat-light-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
 
 
 
 
-@include angular-material-theme($my-theme);
+// @include angular-material-theme($my-theme);
 

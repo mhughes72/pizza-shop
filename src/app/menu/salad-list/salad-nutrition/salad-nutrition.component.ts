@@ -17,6 +17,6 @@ export class SaladNutritionComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    console.log('THIS salad: ', this.salad)
+
   }
 }

@@ -31,20 +31,31 @@ export class SidesListComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) data) { }
 
   ngOnInit(): void {
+
     this.isLoading = true;
     this.sidesShopService.getSides();
     this.sidesSub = this.sidesShopService.getPostUpdateListener()
       .subscribe((sides: Sides[]) => {
         this.sides = sides;
+
         this.isLoading = false;
       });
-      console.log('this.sides: ', this.sides);
-    this.breakpoint = (window.innerWidth <= 500) ? 1 : 2;
+
+      if (window.innerWidth <= 500) {
+        this.breakpoint = 1;
+      } else if (window.innerWidth <= 1100) {
+        this.breakpoint = 2;
+      } else {
+        this.breakpoint = 3;
+      }
+      console.log('this.breakpoint: ', this.breakpoint);
+
+    // this.breakpoint = (window.innerWidth <= 500) ? 1 : 2;
 
   }
 
   onOpenNutrition(sides: Sides) {
-    console.log('NUT PIX: ', sides)
+
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = false;
@@ -57,11 +68,11 @@ export class SidesListComponent implements OnInit {
   }
 
   onResize(event) {
-    if (event.target.innerWidth <= 400) {
+    if (event.target.innerWidth <= 500) {
       this.breakpoint = 1
-    } else if (event.target.innerWidth >= 401 && event.target.innerWidth <= 800) {
+    } else if (event.target.innerWidth >= 501 && event.target.innerWidth <= 1100) {
       this.breakpoint = 2
-    } else if (event.target.innerWidth >= 801) {
+    } else {
 
       this.breakpoint = 3
     }
@@ -70,9 +81,7 @@ export class SidesListComponent implements OnInit {
   }
   getBackground(image) {
 
-    const thisImg = this._sanitizer.bypassSecurityTrustStyle('../../../assets/img/sides/' + image);
-
-    const thisImg2 = "../../../assets/img/sides/chicken.jpg"
+    const thisImg = this._sanitizer.bypassSecurityTrustStyle('../../../assets/img/desserts/' + image);
     return thisImg;
   }
 

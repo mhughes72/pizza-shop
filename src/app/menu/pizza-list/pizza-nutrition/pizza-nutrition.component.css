@@ -1,17 +1,7 @@
-.nutrition-modal {
-  /* padding: 0px; */
-}
 
 .modal-image {
   width: 100%;
 }
-
-.nutrition {
-  float: left;
-  font-weight: bold;
-}
-
-
 
 .nutrition-banner-name {
   font-size: 2.8rem;
@@ -21,56 +11,128 @@
   color: #fff;
 
   width: 75%;
-
 }
+
+.nutrition {
+  font-weight: bold;
+}
+
 .nutrition-banner-name-span {
   /* padding: 1rem 1.5rem; */
   -webkit-box-decoration-break: clone;
-  box-decoration-break: clone; }
+  box-decoration-break: clone;
+}
+
+@media (max-width: 500px) {
   .nutrition-banner-name-span--1 {
     position: absolute;
     top: 8px;
     left: 16px;
-    font-size: 32px;
-    background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+    font-size:  4vw;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(255, 185, 0, 0.85),
+      rgba(255, 119, 48, 0.85)
+    );
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1100px) {
+  .nutrition-banner-name-span--1 {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size:  3vw;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(255, 185, 0, 0.85),
+      rgba(255, 119, 48, 0.85)
+    );
+  }
+}
+
+@media (min-width: 1101px) {
+  .nutrition-banner-name-span--1 {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size:  4vw;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(255, 185, 0, 0.85),
+      rgba(255, 119, 48, 0.85)
+    );
+  }
+}
+
+
+@media (max-width: 500px) {
   .nutrition-banner-name-span--2 {
     position: absolute;
     bottom: 8px;
-    right: 80px;
-    font-size: 64px;
-    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
-  .card__heading-span--3 {
-    background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+    right: 40px;
+    font-size: 4vw;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.85),
+      rgba(40, 180, 133, 0.85)
+    );
+  }
+}
 
+@media (min-width: 501px) and (max-width: 1100px) {
+  .nutrition-banner-name-span--2 {
+    position: absolute;
+    bottom: 8px;
+    right: 40px;
+    font-size: 3vw;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.85),
+      rgba(40, 180, 133, 0.85)
+    );
+  }
+}
+
+@media (min-width: 1101px) {
+  .nutrition-banner-name-span--2 {
+    position: absolute;
+    bottom: 8px;
+    right: 40px;
+    font-size: 4vw;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.85),
+      rgba(40, 180, 133, 0.85)
+    );
+  }
+}
 
 .toppings-list {
   float: left;
   width: 100%;
+  line-height: 80%;
 }
 
-.toppings-image {
-  float: left;
-}
-
-.toppings-description {
-
-}
 
 .toppings-title {
+  display: block;
   margin-top: 50px;
   margin-bottom: -10px;
   font-size: 32px;
-  clear: both;
+}
+
+.toppings-item {
+  margin-bottom: 20px;
 }
 
 .toppings-name {
-  margin-bottom: 15px;
-
-}
-
-.toppings-name {
-  color: blue;
   font-weight: bold;
+  /* margin-bottom: 15px; */
+}
+
+.topping-description {
+  display: block;
 }
 
 .toppings-banner {
@@ -78,19 +140,12 @@
   margin-bottom: 50px;
 }
 
-.topping-description {
-  float: left;
-}
-
 .toppings-img {
+  float: left;
   max-width: 100px;
   max-height: 100px;
   float: left;
   margin: 0px 10px 5px 5px;
-}
-
-.toppings-list {
-  float: right;
 }
 
 .nutrition-table {
@@ -105,9 +160,7 @@
   width: 180px;
 }
 
-
 .nutrition-banner-price {
-
   position: absolute;
   bottom: 8px;
   right: 16px;

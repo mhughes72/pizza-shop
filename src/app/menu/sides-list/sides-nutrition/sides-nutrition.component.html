@@ -2,7 +2,7 @@
 
   <div class="toppings-banner">
 
-    <img src="assets/img/sides/{{sides.imagePath}}" [alt]="sides.name" class="modal-image" layout-fill>
+    <img src="assets/img/desserts/{{sides.imagePath}}" [alt]="sides.name" class="modal-image" layout-fill>
     <h4 class="nutrition-banner-name">
       <div class="nutrition-banner-name-span nutrition-banner-name-span--1">{{ sides.name }}</div>
     </h4>
@@ -11,37 +11,37 @@
     </h4>
 
   </div>
-  <div>{{ sides.description }}</div>
+  <div class="mat-body-1">{{ sides.description }}</div>
 
   <br>
-  <div class="nutrition">
+  <div class="nutrition mat-body-2">
     Calories: {{ sides.calories }} |
     Fat: {{ sides.fat }} |
     Transfat: {{ sides.transfat }} |
     Sodium: {{ sides.sodium }}
   </div>
 
-  <div class="toppings-title">
-
+  <div class="mat-headline toppings-title">
     Toppings
   </div>
   <br>
   <div [ngStyle]="{'background-color':'primary'}" *ngFor="let topping of sides.toppings;
   let i = index" class="toppings-list">
-    <div class="toppings-image">
-      <img mat-card-image class="toppings-img" src="assets/img/toppings/{{topping.imagePath}}" [alt]="sides.name">
-    </div>
-    <div class="toppings-name">
-      {{ topping.name }}
-    </div>
-    <div class="toppings-description">
-      {{ topping.description }}
+    <div class="toppings-item">
+      <div>
+        <img mat-card-image class="toppings-img" src="assets/img/toppings/{{topping.imagePath}}" [alt]="sides.name">
+      </div>
+      <div class="mat-title">
+        {{ topping.name }}
+      </div>
+      <div class="mat-body-1 topping-description">
+        {{ topping.description }}
+      </div>
     </div>
   </div>
 </mat-dialog-content>
 
-  <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Close</button>
-    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Order Now</button>
-  </mat-dialog-actions>
-
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Order Now</button>
+</mat-dialog-actions>

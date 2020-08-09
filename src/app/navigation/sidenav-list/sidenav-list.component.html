@@ -1,28 +1,26 @@
 <mat-nav-list>
-
-  <a *ngIf="!isAuth" mat-list-item matrouterLink="/signup" (click)="onClose()">
+  <a *ngIf="!isAuth" mat-list-item routerLink="/signup" (click)="onClose()">
     <mat-icon>build</mat-icon>
     <span class="nav-caption">Signup</span>
   </a>
-  <a *ngIf="!isAuth" mat-list-item matrouterLink="/login" (click)="onClose()">
+  <a *ngIf="!isAuth" mat-list-item routerLink="/login" (click)="onClose()">
     <mat-icon>calendar_today</mat-icon>
     <span class="nav-caption">Login</span>
   </a>
-  <a *ngIf="!isAuth" mat-list-item matrouterLink="/logout" (click)="onClose()">
+  <a *ngIf="isAuth" mat-list-item (click)="onLogout()">
     <mat-icon>calendar_today</mat-icon>
     <span class="nav-caption">Logout</span>
   </a>
-  <a *ngIf="isAuth" mat-list-item matrouterLink="/make" (click)="onClose()">
+  <a *ngIf="isAuth" mat-list-item routerLink="/make" (click)="onClose()">
     <mat-icon>Make sum 'zaa</mat-icon>
     <span class="nav-caption">About</span>
   </a>
-  <a mat-list-item matrouterLink="/about" (click)="onClose()">
+  <a mat-list-item routerLink="/about" (click)="onClose()">
     <mat-icon>commute</mat-icon>
     <span class="nav-caption">About</span>
   </a>
-  <a mat-list-item matrouterLink="/contact" (click)="onClose()">
+  <a mat-list-item routerLink="/contact" (click)="onClose()">
     <mat-icon>commute</mat-icon>
     <span class="nav-caption">Contact</span>
   </a>
-
 </mat-nav-list>

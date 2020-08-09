@@ -17,6 +17,6 @@ export class SidesNutritionComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    console.log('THIS sides: ', this.sides)
+
   }
 }

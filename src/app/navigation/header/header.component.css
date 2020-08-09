@@ -1,6 +1,8 @@
 a {
   text-decoration: none;
   color: white;
+  cursor: pointer;
+  margin: 25px;
 }
 
 a:hover,
@@ -26,60 +28,26 @@ a:active {
   left: 0;
   z-index: -1;
   cursor: pointer;
-
-
 }
 
-
 .header-img {
-
   margin-top: 50px;
-  max-width:100%;
+  max-width: 100%;
   height: auto;
   float: left;
   float: none;
-
 }
 
 .header-title {
-
   margin-top: 250px;
   max-width: 100%;
   height: auto;
   float: clear;
-
 }
 
-
 .header-subtitle {
-
   margin-top: 250px;
   /* max-width: 50%; */
   height: auto;
   color: black;
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

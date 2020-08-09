@@ -38,13 +38,22 @@ export class SpecialsListComponent implements OnInit {
         this.specials = specialss;
         this.isLoading = false;
       });
-      console.log('this.specials: ', this.specials);
-    this.breakpoint = (window.innerWidth <= 500) ? 1 : 2;
 
+      if (window.innerWidth <= 500) {
+        this.breakpoint = 1;
+      } else if (window.innerWidth <= 1100) {
+        this.breakpoint = 2;
+      } else {
+        this.breakpoint = 3;
+
+      }
+
+    // this.breakpoint = (window.innerWidth <= 500) ? 1 : 2;
+    console.log('this.breakpoint: ', this.breakpoint);
   }
 
   onOpenNutrition(specials: Specials) {
-    console.log('NUT PIX: ', specials)
+
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = false;
@@ -57,11 +66,11 @@ export class SpecialsListComponent implements OnInit {
   }
 
   onResize(event) {
-    if (event.target.innerWidth <= 400) {
+    if (event.target.innerWidth <= 500) {
       this.breakpoint = 1
-    } else if (event.target.innerWidth >= 401 && event.target.innerWidth <= 800) {
+    } else if (event.target.innerWidth >= 501 && event.target.innerWidth <= 1100) {
       this.breakpoint = 2
-    } else if (event.target.innerWidth >= 801) {
+    } else {
 
       this.breakpoint = 3
     }

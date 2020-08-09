@@ -55,6 +55,9 @@ import { SpecialsNutritionComponent } from './menu/specials-list/specials-nutrit
 import { SidesNutritionComponent } from './menu/sides-list/sides-nutrition/sides-nutrition.component';
 import { SaladNutritionComponent } from './menu/salad-list/salad-nutrition/salad-nutrition.component';
 import { FooterComponent } from './footer/footer.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { MakeComponent } from './make/make.component';
 
 
 @NgModule({
@@ -91,6 +94,9 @@ import { FooterComponent } from './footer/footer.component';
     SidesNutritionComponent,
     SaladNutritionComponent,
     FooterComponent,
+    AboutComponent,
+    ContactComponent,
+    MakeComponent,
 
 
 

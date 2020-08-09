@@ -6,9 +6,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { SaladNutritionComponent } from './salad-nutrition/salad-nutrition.component';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 // import {MatDialogModule} from "@angular/material";
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatDialogConfig} from "@angular/material/dialog";
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogConfig } from "@angular/material/dialog";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 
 
 @Component({
@@ -38,13 +38,21 @@ export class SaladListComponent implements OnInit {
         this.salads = salads;
         this.isLoading = false;
       });
-      console.log('this.salads: ', this.salads);
-    this.breakpoint = (window.innerWidth <= 500) ? 1 : 2;
+
+    if (window.innerWidth <= 500) {
+      this.breakpoint = 1;
+    } else if (window.innerWidth <= 1100) {
+      this.breakpoint = 2;
+    } else {
+      this.breakpoint = 3;
+    }
+
+    // this.breakpoint = (window.innerWidth <= 500) ? 1 : 2;
 
   }
 
   onOpenNutrition(salad: Salad) {
-    console.log('NUT PIX: ', salad)
+
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = false;
@@ -57,11 +65,11 @@ export class SaladListComponent implements OnInit {
   }
 
   onResize(event) {
-    if (event.target.innerWidth <= 400) {
+    if (event.target.innerWidth <= 500) {
       this.breakpoint = 1
-    } else if (event.target.innerWidth >= 401 && event.target.innerWidth <= 800) {
+    } else if (event.target.innerWidth >= 501 && event.target.innerWidth <= 1100) {
       this.breakpoint = 2
-    } else if (event.target.innerWidth >= 801) {
+    } else {
 
       this.breakpoint = 3
     }

@@ -17,7 +17,7 @@ pizza: Pizza;
     }
 
   ngOnInit(): void {
-    console.log('THIS PIZZA: ', this.pizza)
+
   }
 
 }

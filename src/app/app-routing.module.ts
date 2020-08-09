@@ -18,6 +18,9 @@ import { SidesFormComponent } from './sides-form/sides-form.component';
 import { ToppingsFormComponent } from './toppings-form/toppings-form.component';
 import { ToppingsSelectComponent } from './toppings-select/toppings-select.component';
 import { BannerComponent } from './banner/banner.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { MakeComponent } from './make/make.component';
 
 
 
@@ -29,6 +32,9 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'menu', component: BannerComponent },
+  { path: 'make', component: MakeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
   // { path: 'menu', component: MenuComponent, children: [
   //   { path: 'pizza', component: PizzaListComponent, children: [
   //     { path: ':id', component: PizzaDetailComponent},

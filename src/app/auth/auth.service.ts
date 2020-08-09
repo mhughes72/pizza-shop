@@ -25,6 +25,7 @@ export class AuthService {
   }
 
   login(authData: AuthData) {
+    console.log('authData: ', authData);
     this.afAuth.auth
       .signInWithEmailAndPassword(authData.email, authData.password)
       .then(result => {
@@ -37,8 +38,9 @@ export class AuthService {
   }
 
   logout() {
+    console.log('LOGOUT')
     this.authChange.next(false);
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
     this.isAuthenticated = false;
   }
 

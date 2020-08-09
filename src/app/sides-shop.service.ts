@@ -33,7 +33,7 @@ export class SidesShopService {
     this.http
       .get<any>(BACKEND_URL)
       .pipe(map((postData) => {
-        return postData.pizza.map(post => {
+        return postData.sides.map(post => {
           return {
             id: post._id,
             name: post.name,

@@ -18,10 +18,21 @@
   height: 500px;
 } */
 
+.title {
+  /* position: absolute; */
+}
 
+.title-01 {
+  float: left;
+}
 
-
-
+.title-01-image {
+  top: -90px;
+  left: -150px;
+  height: 30px;
+  width: 30px;
+  float: right;
+}
 
 
 

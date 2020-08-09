@@ -1,14 +1,38 @@
-
 <mat-toolbar color="primary">
   <div fxHide.gt-xs>
     <button mat-icon-button (click)="onToggleSidenav()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
+  <div fxHide.xs fxLayout="row">
+    <a *ngIf="!isAuth" mat-list-item routerLink="/signup">
+      <span class="nav-caption">Signup</span>
+    </a>
+    <a *ngIf="!isAuth" mat-list-item routerLink="/login">
+      <span class="nav-caption">Login</span>
+    </a>
+    <a *ngIf="isAuth" mat-list-item (click)="onLogout()">
+      <span class="nav-caption">Logout</span>
+    </a>
+    <a *ngIf="isAuth" mat-list-item routerLink="/make">
+      <span class="nav-caption">Make!</span>
+    </a>
+    <a *ngIf="isAuth" mat-list-item routerLink="/make">
+      <span class="nav-caption">About</span>
+    </a>
+    <a mat-list-item routerLink="/pizza-shop">
+      <span class="nav-caption">Pizza</span>
+    </a>
+    <a mat-list-item routerLink="/contact">
+      <span class="nav-caption">Contact</span>
+    </a>
+
+  </div>
+
   <div class="header-group" routerLink="/">
     <img class="header-img" src="./../../../assets/img/whole-title.png">
 
   </div>
 
-<br><br><br><br>
+  <br><br><br><br>
 </mat-toolbar>

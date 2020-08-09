@@ -18,6 +18,6 @@ export class SpecialsNutritionComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    console.log('THIS specials: ', this.specials)
+    
   }
 }
