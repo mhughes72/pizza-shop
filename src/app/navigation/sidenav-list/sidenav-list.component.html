@@ -1,19 +1,7 @@
 <mat-nav-list>
-  <a *ngIf="!isAuth" mat-list-item routerLink="/signup" (click)="onClose()">
-    <mat-icon>build</mat-icon>
-    <span class="nav-caption">Signup</span>
-  </a>
-  <a *ngIf="!isAuth" mat-list-item routerLink="/login" (click)="onClose()">
-    <mat-icon>calendar_today</mat-icon>
-    <span class="nav-caption">Login</span>
-  </a>
-  <a *ngIf="isAuth" mat-list-item (click)="onLogout()">
-    <mat-icon>calendar_today</mat-icon>
-    <span class="nav-caption">Logout</span>
-  </a>
-  <a *ngIf="isAuth" mat-list-item routerLink="/make" (click)="onClose()">
+  <a *ngIf="isAuth" mat-list-item routerLink="/pizza" (click)="onClose()">
     <mat-icon>Make sum 'zaa</mat-icon>
-    <span class="nav-caption">About</span>
+    <span class="nav-caption">Pizza</span>
   </a>
   <a mat-list-item routerLink="/about" (click)="onClose()">
     <mat-icon>commute</mat-icon>
@@ -23,4 +11,19 @@
     <mat-icon>commute</mat-icon>
     <span class="nav-caption">Contact</span>
   </a>
+  <a *ngIf="!isAuth" mat-list-item routerLink="/login" (click)="onClose()">
+    <mat-icon>calendar_today</mat-icon>
+    <span class="nav-caption">Login</span>
+  </a>
+  <a *ngIf="!isAuth" mat-list-item routerLink="/signup" (click)="onClose()">
+    <mat-icon>build</mat-icon>
+    <span class="nav-caption">Signup</span>
+  </a>
+
+  <a *ngIf="isAuth" mat-list-item (click)="onLogout()">
+    <mat-icon>calendar_today</mat-icon>
+    <span class="nav-caption">Logout</span>
+  </a>
+
+
 </mat-nav-list>

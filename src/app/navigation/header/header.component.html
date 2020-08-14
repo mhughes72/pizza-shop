@@ -1,10 +1,19 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
   <div fxHide.gt-xs>
     <button mat-icon-button (click)="onToggleSidenav()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
-  <div fxHide.xs fxLayout="row">
+  <div fxHide.xs fxLayout="row" fxLayoutAlign="end center">
+    <a mat-list-item routerLink="/pizza-shop">
+      <span class="nav-caption">Pizza</span>
+    </a>
+    <a mat-list-item routerLink="/about">
+      <span class="nav-caption">About</span>
+    </a>
+    <a mat-list-item routerLink="/contact">
+      <span class="nav-caption">Contact</span>
+    </a>
     <a *ngIf="!isAuth" mat-list-item routerLink="/signup">
       <span class="nav-caption">Signup</span>
     </a>
@@ -17,15 +26,15 @@
     <a *ngIf="isAuth" mat-list-item routerLink="/make">
       <span class="nav-caption">Make!</span>
     </a>
-    <a *ngIf="isAuth" mat-list-item routerLink="/make">
-      <span class="nav-caption">About</span>
-    </a>
-    <a mat-list-item routerLink="/pizza-shop">
-      <span class="nav-caption">Pizza</span>
-    </a>
-    <a mat-list-item routerLink="/contact">
-      <span class="nav-caption">Contact</span>
-    </a>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+
+
 
   </div>
 
@@ -35,4 +44,58 @@
   </div>
 
   <br><br><br><br>
+</mat-toolbar> -->
+
+
+
+<mat-toolbar>
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <button routerLink="/" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>home</mat-icon>
+  </button>
+  <a *ngIf="!isAuth" mat-list-item routerLink="/signup">
+    <span class="nav-caption">Signup</span>
+  </a>
+  <a *ngIf="!isAuth" mat-list-item routerLink="/login">
+    <span class="nav-caption">Login</span>
+  </a>
+  <a *ngIf="isAuth" mat-list-item (click)="onLogout()">
+    <span class="nav-caption">Logout</span>
+  </a>
+  <span class="example-spacer"></span>
+
+  <button routerLink="/about" mat-icon-button class="example-icon favorite-icon"
+  aria-label="Example icon-button with heart icon">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+  <button routerLink="/contact" mat-icon-button class="example-icon"
+  aria-label="Example icon-button with share icon">
+    <mat-icon>contact_phone</mat-icon>
+  </button>
+
+  <button *ngIf="isAuth" routerLink="/make" mat-icon-button class="example-icon"
+  aria-label="Example icon-button with share icon">
+    <mat-icon>fastfood</mat-icon>
+  </button>
+
+
+  <div class="header-group" routerLink="/">
+    <img class="header-img" src="./../../../assets/img/whole-title.png">
+
+  </div>
+
+  <br><br><br><br>
 </mat-toolbar>
+
+
+
+
+
+
+
+
+

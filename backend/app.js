@@ -18,10 +18,14 @@ mongoose
     // "mongodb+srv://mhughes:" + process.env.MONGO_ATLAS_PW + "@mattcluster-crvln.mongodb.net/meanstackpizza?retryWrites=true&w=majority"
 
     "mongodb+srv://mhughes:7ant147H@mattcluster-crvln.mongodb.net/meanstackpizza?retryWrites=true&w=majority"
-  )
+    )
   .then(() => {
+    console.log("Connected to database!");
+
   })
   .catch((e) => {
+    console.log("NOT Connected to database!");
+
   });
 
 app.use(bodyParser.json());
@@ -68,6 +72,8 @@ app.get("/api/pizza", (req, res, next) => {
     res.status(200).json({
       pizza: documents
     });
+  }).then(e => {
+    console.log('E: ', req)
   });
 });
 

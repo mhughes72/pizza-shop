@@ -5,6 +5,11 @@ a {
   margin: 25px;
 }
 
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
 a:hover,
 a:active {
   color: lightgray;
